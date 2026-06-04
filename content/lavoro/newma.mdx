@@ -1,11 +1,11 @@
 ---
-title: "NEWMA — Modellazione probabilistica e verifica formale"
+title: "NEWMA — AI per trascrizione di neumi gregoriani"
 slug: "newma"
 date: "2024-11-10"
 year: "2024"
-category: "Ricerca applicata"
-abstract: "Progetto di ricerca su metodi di verifica formale applicati a sistemi probabilistici. Relazione tecnica e qualitativa disponibili."
-tags: ["verifica formale", "probabilità", "ricerca"]
+category: "Ricerca applicata · AI · Liturgia"
+abstract: "Sistema di trascrizione automatica della notazione neumatica gregoriana attraverso reti neurali. All'incrocio tra computer vision, paleografia musicale e liturgia."
+tags: ["AI", "computer vision", "neumi", "gregoriano", "ricerca"]
 lang: "it"
 pdfs:
   - { label: "Relazione tecnica", file: "/assets/progetto_newma_relazione_tecnica.pdf" }
@@ -14,29 +14,30 @@ pdfs:
 
 ## Problema
 
-Sistemi che modellano fenomeni stocastici hanno garanzie deboli: si verifica empiricamente che funzionino, raramente si dimostra formalmente che *funzioneranno* nei casi che non abbiamo visto. NEWMA nasce per costruire una pipeline di verifica che combini analisi formale e validazione probabilistica.
+I manoscritti gregoriani contengono migliaia di pagine di notazione **neumatica** — un sistema musicale antico, ricco di varianti grafiche regionali, che precede di secoli la pentagramma moderno. Trascriverli a mano è lentissimo; sbagliarli vuol dire perdere informazione storica. NEWMA nasce per costruire una pipeline AI che li riconosca, li classifichi e li converta in notazione moderna senza fraintendere ciò che è ambiguo.
 
 ## Approccio
 
-Il sistema sotto analisi è descritto come una **catena di Markov a tempo discreto** con stati osservabili e parametri appresi da dati. La verifica avviene su due livelli:
+Il sistema combina tre livelli:
 
-1. **Proprietà strutturali** — verificate via model checking probabilistico (PCTL).
-2. **Garanzie di concentrazione** — vincoli di Chernoff/Hoeffding sui parametri appresi.
+1. **Segmentazione** delle pagine manoscritte — separare neumi, testo latino sottostante, decorazioni.
+2. **Classificazione** dei singoli neumi via CNN, con attenzione alle famiglie grafiche regionali (Sangallese, Metense, Beneventana).
+3. **Trascrizione** in notazione moderna preservando le ambiguità: un neuma incerto resta tale nel risultato, non viene "indovinato".
 
 ## Modellazione
 
-Il cuore tecnico è la connessione tra le due verifiche: una proprietà PCTL fissata sull'astrazione formale rimane valida sull'istanza concreta se gli scostamenti dei parametri stanno dentro le soglie probabilistiche stabilite.
+Il cuore tecnico è gestire l'**incertezza paleografica**. Un buon trascrittore umano sa quando lasciare una nota tra parentesi quadre; un sistema AI ingenuo no. NEWMA modella esplicitamente la confidenza per neuma e propaga l'incertezza nella resa finale, così il liturgista vede dove il sistema *si sta fidando troppo*.
 
-> Verificare formalmente un sistema probabilistico non vuol dire eliminare l'incertezza. Vuol dire **quantificarla** in modo che le decisioni a valle la sappiano gestire.
+> Trascrivere un manoscritto non è solo leggerlo. È restituire intatto ciò che il manoscritto dice di non sapere.
 
 ## Risultati
 
-- Pipeline funzionante su tre casi studio.
-- Specifica delle soglie come funzione del numero di campioni.
+- Pipeline funzionante su corpus di manoscritti campione (Sangallese, X-XI secolo).
+- Resa visiva dell'incertezza neuma-per-neuma.
 - Documentazione tecnica e qualitativa (vedi PDF sotto).
 
 ## Insight
 
-La verifica formale è spesso vista come l'opposto della pratica applicata. NEWMA mostra che la separazione è artificiale: la verifica diventa utile esattamente quando accetta di lavorare con dati rumorosi e parametri incerti.
+L'incrocio tra AI e liturgia è una zona insolitamente fertile. La liturgia tratta da sempre il problema della tradizione fedele e del cambiamento legittimo. L'AI moderna tratta da sempre il problema della generalizzazione e dell'errore. Le due competenze, messe vicino, si interrogano a vicenda. NEWMA è una prima esplorazione di quello spazio.
 
-→ Articoli correlati: [Lo scarto epistemologico](/intrecci/pensieri/scarto-epistemologico).
+→ Articolo correlato: [Lo scarto epistemologico](/intrecci/pensieri/scarto-epistemologico).

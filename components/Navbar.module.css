@@ -2,9 +2,11 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--bg-deep);
+  background: rgba(26, 26, 28, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 0.5px solid transparent;
-  transition: border-color 200ms ease;
+  transition: border-color 200ms ease, background 200ms ease;
 }
 
 .nav.scrolled {
@@ -18,17 +20,19 @@
   height: var(--nav-height);
   max-width: var(--max-content);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-lg);
+  gap: var(--space-md);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
+  flex-shrink: 0;
 }
 
 .brandText {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 22px;
   color: var(--text-primary);
@@ -43,7 +47,7 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2.25rem;
 }
 
 .linkItem {
@@ -51,7 +55,7 @@
 }
 
 .link, .dropdownButton {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 400;
   font-size: var(--text-label);
   letter-spacing: 0.12em;
@@ -74,7 +78,7 @@
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: calc(100% + 0.6rem);
   left: -1rem;
   min-width: 240px;
   background: var(--bg-surface);
@@ -90,7 +94,7 @@
   gap: 0.75rem;
   padding: 0.6rem 1.25rem;
   color: var(--text-muted);
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 400;
   font-size: var(--text-label);
   letter-spacing: 0.1em;
@@ -103,10 +107,34 @@
   color: var(--gold-main);
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  padding-left: 1rem;
+  border-left: 0.5px solid var(--border-subtle);
+  margin-left: 0.25rem;
+}
+
+.socials a {
+  color: var(--text-muted);
+  transition: color 150ms ease;
+  display: inline-flex;
+}
+
+.socials a:hover {
+  color: var(--gold-main);
+}
+
 .langSwitch {
   display: flex;
-  gap: 0.5rem;
-  font-family: 'Outfit', system-ui, sans-serif;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
   font-size: var(--text-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -146,19 +174,20 @@
   z-index: 100;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1.5rem 2rem 2rem;
+  overflow-y: auto;
 }
 
 .mobileTop {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .mobileClose {
-  font-family: 'Outfit', sans-serif;
-  font-size: 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
   color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -167,11 +196,11 @@
 .mobileLinks {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .mobileLink {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 28px;
   font-weight: 300;
   color: var(--text-primary);
@@ -180,12 +209,10 @@
   gap: 1rem;
 }
 
-.mobileLink:hover {
-  color: var(--gold-main);
-}
+.mobileLink:hover { color: var(--gold-main); }
 
 .mobileSection {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 22px;
   font-weight: 300;
   font-style: italic;
@@ -196,14 +223,29 @@
   padding-left: 1.25rem;
 }
 
-@media (max-width: 768px) {
-  .links {
+.mobileSocials {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--border-subtle);
+  display: flex;
+  gap: 1.25rem;
+}
+
+.mobileSocials a {
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .links, .socials {
     display: none;
   }
   .hamburger {
     display: flex;
   }
   .inner {
-    padding: 0 1.25rem;
+    padding: 0 var(--space-md);
+  }
+  .right {
+    gap: 0.75rem;
   }
 }
