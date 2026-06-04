@@ -29,13 +29,13 @@ export default function Navbar({ locale }) {
     setDropdownOpen(false);
   }, [pathname]);
 
-  const prefix = locale === 'it' ? '' : `/${locale}`;
-  const homeHref = prefix || '/';
+  const prefix = `/${locale}`;
+  const homeHref = prefix;
 
   const otherLocale = locale === 'it' ? 'en' : 'it';
   const switchPath = (() => {
-    const stripped = pathname.replace(/^\/(it|en)/, '') || '/';
-    return otherLocale === 'it' ? stripped : `/en${stripped === '/' ? '' : stripped}`;
+    const stripped = pathname.replace(/^\/(it|en)/, '');
+    return `/${otherLocale}${stripped || ''}`;
   })();
 
   const isActive = (href) => pathname === href || pathname.startsWith(href + '/');

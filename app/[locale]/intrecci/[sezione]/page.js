@@ -32,16 +32,13 @@ export async function generateMetadata({ params: { locale, sezione } }) {
 
 const PAGE_SIZE = 10;
 
-export default async function SectionPage({ params: { locale, sezione }, searchParams }) {
+export default async function SectionPage({ params: { locale, sezione } }) {
   if (!sectionSlugs.includes(sezione)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
 
   const articles = getArticlesBySection(sezione, { locale });
-  const page = Math.max(1, parseInt(searchParams?.page || '1', 10));
-  const total = Math.ceil(articles.length / PAGE_SIZE) || 1;
-  const visible = articles.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const visible = articles.slice(0, PAGE_SIZE);
 
   const Icon = sectionIcons[sezione];
   const img = sectionImg[sezione];
@@ -83,24 +80,12 @@ export default async function SectionPage({ params: { locale, sezione }, searchP
           </div>
         )}
 
-        {total > 1 && (
-          <nav className={styles.pagination} aria-label="Paginazione">
-            {page > 1 ? (
-              <Link href={`${prefix}/intrecci/${sezione}?page=${page - 1}`}>← {t('article.previous')}</Link>
-            ) : <span className={styles.disabled}>← {t('article.previous')}</span>}
-            <span style={{ color: 'var(--text-dim)' }}>{page} / {total}</span>
-            {page < total ? (
-              <Link href={`${prefix}/intrecci/${sezione}?page=${page + 1}`}>{t('article.next')} →</Link>
-            ) : <span className={styles.disabled}>{t('article.next')} →</span>}
-          </nav>
-        )}
-
         {relatedProjects.length > 0 && (
           <section className={styles.relatedProjects}>
             <h2>Progetti correlati</h2>
             <div className={styles.projectLinks}>
               {relatedProjects.map((p) => (
-                <Link key={p.slug} href={`${prefix}/lavoro/${p.slug}`} className={styles.projectLink}>
+                <Link key={p.slug} href={`/${locale}/lavoro/${p.slug}`} className={styles.projectLink}>
                   <span>{p.title}</span>
                   <span>→</span>
                 </Link>

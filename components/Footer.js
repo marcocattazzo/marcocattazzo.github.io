@@ -4,7 +4,7 @@ import styles from './Footer.module.css';
 
 export default async function Footer({ locale }) {
   const t = await getTranslations({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
   const year = new Date().getFullYear();
 
   return (

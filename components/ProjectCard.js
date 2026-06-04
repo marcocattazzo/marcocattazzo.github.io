@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from './ProjectCard.module.css';
 
 export default function ProjectCard({ project, locale }) {
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
   const label = [project.category, project.year].filter(Boolean).join(' · ');
 
   return (

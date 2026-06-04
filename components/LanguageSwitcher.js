@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation';
 export default function LanguageSwitcher({ locale }) {
   const pathname = usePathname();
   const other = locale === 'it' ? 'en' : 'it';
-  const stripped = pathname.replace(/^\/(it|en)/, '') || '/';
-  const target = other === 'it' ? stripped : `/en${stripped === '/' ? '' : stripped}`;
+  const stripped = pathname.replace(/^\/(it|en)/, '');
+  const target = `/${other}${stripped || ''}`;
 
   const linkStyle = {
     fontFamily: 'Outfit, system-ui, sans-serif',

@@ -25,7 +25,7 @@ const interessi = [
 export default async function ChiSonoPage({ params: { locale } }) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
 
   return (
     <div className={styles.wrap}>

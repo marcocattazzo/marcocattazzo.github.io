@@ -18,7 +18,7 @@ const sections = [
 
 export default function SectionGrid({ locale }) {
   const t = useTranslations();
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
 
   return (
     <motion.div

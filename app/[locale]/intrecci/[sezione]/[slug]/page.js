@@ -40,7 +40,7 @@ export default async function ArticlePage({ params: { locale, sezione, slug } })
   if (!article) notFound();
 
   const t = await getTranslations({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
   const { prev, next } = getAdjacentArticles(sezione, slug, { locale });
   const relatedProject = article.progetto ? getProject(article.progetto, { locale }) : null;
 

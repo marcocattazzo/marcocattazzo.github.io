@@ -19,7 +19,7 @@ export async function generateMetadata({ params: { locale } }) {
 export default async function LavoroPage({ params: { locale } }) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
   const projects = getAllProjects({ locale });
 
   return (

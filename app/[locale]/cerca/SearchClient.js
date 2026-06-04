@@ -7,7 +7,7 @@ import styles from './search.module.css';
 
 export default function SearchClient({ docs, locale, labels, sectionLabels }) {
   const [q, setQ] = useState('');
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
 
   const idx = useMemo(() => {
     return lunr(function () {
