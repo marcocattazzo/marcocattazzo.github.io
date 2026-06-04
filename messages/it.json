@@ -2,10 +2,12 @@
   "nav": {
     "intrecci": "Intrecci",
     "lavoro": "Lavoro",
+    "grafica": "Grafica",
     "chiSono": "Chi Sono",
     "contatti": "Contatti",
     "curriculum": "Curriculum",
-    "cerca": "Cerca"
+    "cerca": "Cerca",
+    "close": "Chiudi"
   },
   "sections": {
     "matematica": "Matematica",
@@ -16,36 +18,62 @@
     "pensieri": "Pensieri"
   },
   "sectionSubtitles": {
-    "matematica": "Logica, ontologia, strutture. Rigore come forma di cura.",
-    "fede-e-chiesa": "Teologia, pastorale, comunità. Pensare la fede dentro il tempo.",
-    "parole": "Lingue antiche, semantica, filosofia del linguaggio.",
-    "musica": "Armonia, tempo, forma. Quando la matematica suona.",
-    "giochi": "Combinatoria, game design, logica che gioca.",
-    "pensieri": "Note, appunti, frammenti aperti."
+    "matematica": "Logica come forma di cura.",
+    "fede-e-chiesa": "Pensare la fede dentro il tempo.",
+    "parole": "Il nome porta il mondo.",
+    "musica": "Il suono come struttura.",
+    "giochi": "La regola come libertà.",
+    "pensieri": "Lo scarto epistemologico."
+  },
+  "sectionIntros": {
+    "matematica": "Studio la matematica come una pratica del pensiero, non come un repertorio di tecniche. La logica, la combinatoria, l'ontologia degli oggetti formali — strumenti per abitare con rigore il mondo dei modelli e per chiedersi cosa, di esso, sopravvive al cambio di descrizione.",
+    "fede-e-chiesa": "Teologia, pastorale, liturgia: tre modi di pensare la fede dentro il tempo. La sinodalità non è un'opinione organizzativa, è una grammatica del decidere insieme. La liturgia non è un teatro, è una forma del conoscere comune.",
+    "parole": "Ogni lingua porta un mondo dentro le sue radici. Il latino vede e classifica, l'ebraico agisce e nomina. Conoscere una parola fino in fondo è tenere in palmo la sua storia — e ricordarsi che chi la usa, oggi, la sta abitando senza più ricordarla.",
+    "musica": "Cadenze, modulazioni, fughe: la musica condivide con la logica una grammatica di tensione e risoluzione. Qui appunti su armonia, tempo, struttura — e su quei luoghi precisi in cui la matematica, smesso il calcolo, comincia a suonare.",
+    "giochi": "Un gioco perfetto non è un gioco senza regole — è un gioco le cui regole hanno una struttura. Geometria combinatoria, teoria dei giochi, game design come pensiero che si fa esperibile.",
+    "pensieri": "Note brevi, frammenti aperti, scarti epistemologici. Il modello non è il territorio: imparare a leggere ciò che il modello non sta dicendo è la disciplina più sottile del rigore."
+  },
+  "sectionAnchors": {
+    "articoli": "Articoli",
+    "note": "Note",
+    "risorse": "Risorse"
   },
   "home": {
     "eyebrow": "Fil d'Or — uno spazio per pensare",
     "heroTitle": "Rigore e senso.\nLo stesso filo.",
-    "heroBody": "Penso sistemi. Alcuni sono algoritmi, alcuni sono comunità, alcuni sono testi antichi. Li studio con lo stesso rigore e la stessa cura.",
-    "ctaPrimary": "Esplora",
-    "ctaSecondary": "Curriculum",
+    "heroBody": "Penso sistemi. Alcuni sono algoritmi, alcuni sono comunità, alcuni sono giochi. Li studio con lo stesso rigore e la stessa cura.",
+    "ctaPrimary": "Chi sono",
+    "ctaSecondary": "Esplora gli intrecci",
+    "intrecciIntro": "Ogni disciplina è un modo di abitare il reale. La matematica lo misura, la fede lo abita, le parole lo nominano, la musica lo vibra. Il filo d'oro le attraversa tutte.",
     "threadsLabel": "Intrecci",
     "recentLabel": "Recenti",
     "allArticles": "Tutti gli articoli"
   },
   "lavoro": {
     "title": "Lavoro",
-    "bio": "Mi occupo di modellazione di problemi complessi, logica formale applicata e formazione al pensiero strutturato. Sono un ponte tra rigore teorico e applicazione pratica — in contesti tecnici, organizzativi, educativi.",
+    "bio": "Modello problemi complessi. Alcuni sono algoritmi di ottimizzazione, alcuni sono organizzazioni, alcuni sono sistemi di senso. Lo strumento cambia, il metodo no.",
     "talks": "Talks & Speaking",
     "downloadCV": "Scarica CV",
     "letsTalk": "Parliamo"
   },
+  "grafica": {
+    "title": "Grafica",
+    "subtitle": "Il segno come forma di pensiero. La composizione non è decorazione: è struttura che si vede.",
+    "manifesto": "Lavoro al design come a una scrittura: cerca della giusta proporzione, attenzione al ritmo, taglio per sottrazione. Le buone immagini non aggiungono nulla — tolgono quel che ostacolava il senso.",
+    "toolsLabel": "Strumenti",
+    "portfolioLabel": "Lavori",
+    "formationLink": "Vedi il percorso formativo →"
+  },
   "chiSono": {
     "title": "Chi sono",
     "bio": "Studio sistemi — formali, umani, linguistici. Ho una formazione in matematica teorica e un percorso parallelo in teologia, pastorale e filosofia del linguaggio. Non li considero mondi separati. Il filo d'oro li unisce.",
-    "formazione": "Formazione",
-    "interessi": "Interessi",
-    "comeLavoro": "Come lavoro"
+    "intro": "Introduzione",
+    "formazioneMat": "Formazione matematica",
+    "formazioneTeo": "Formazione teologica",
+    "esperienzePast": "Esperienze pastorali",
+    "graficaDesign": "Grafica e design",
+    "cvLinkBlock": "Vuoi vedere il mio percorso completo in formato curriculum?",
+    "cvLinkCta": "Vai alla pagina Curriculum →"
   },
   "contatti": {
     "title": "Contatti",
@@ -70,6 +98,6 @@
   },
   "footer": {
     "tagline": "Uno spazio per pensare.",
-    "copyright": "Fil d'Or"
+    "thread": "Lo stesso filo, da capo, ogni volta."
   }
 }

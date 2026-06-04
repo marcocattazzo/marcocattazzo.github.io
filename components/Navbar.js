@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sectionIcons } from './SectionIcons';
+import { socialList } from './SocialIcons';
 import styles from './Navbar.module.css';
 
 const sectionSlugs = ['matematica', 'fede-e-chiesa', 'parole', 'musica', 'giochi', 'pensieri'];
@@ -39,6 +40,7 @@ export default function Navbar({ locale }) {
   })();
 
   const isActive = (href) => pathname === href || pathname.startsWith(href + '/');
+  const socials = socialList();
 
   return (
     <>
@@ -103,30 +105,38 @@ export default function Navbar({ locale }) {
               {t('nav.lavoro')}
             </Link>
             <Link
+              href={`${prefix}/grafica`}
+              className={`${styles.link} ${isActive(`${prefix}/grafica`) ? styles.linkActive : ''}`}
+            >
+              {t('nav.grafica')}
+            </Link>
+            <Link
               href={`${prefix}/chi-sono`}
               className={`${styles.link} ${isActive(`${prefix}/chi-sono`) ? styles.linkActive : ''}`}
             >
               {t('nav.chiSono')}
             </Link>
-
-            <div className={styles.langSwitch}>
-              <Link href={locale === 'it' ? '#' : switchPath} className={locale === 'it' ? styles.langActive : ''}>
-                IT
-              </Link>
-              <span aria-hidden>·</span>
-              <Link href={locale === 'en' ? '#' : switchPath} className={locale === 'en' ? styles.langActive : ''}>
-                EN
-              </Link>
-            </div>
           </div>
 
-          <button
-            className={styles.hamburger}
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-          >
-            <span /><span /><span />
-          </button>
+          <div className={styles.right}>
+            <div className={styles.langSwitch}>
+              <Link href={locale === 'it' ? '#' : switchPath} className={locale === 'it' ? styles.langActive : ''}>IT</Link>
+              <span aria-hidden>·</span>
+              <Link href={locale === 'en' ? '#' : switchPath} className={locale === 'en' ? styles.langActive : ''}>EN</Link>
+            </div>
+
+            <div className={styles.socials}>
+              {socials.map(({ id, label, href, Icon }) => (
+                <a key={id} href={href} target="_blank" rel="noreferrer" aria-label={label}>
+                  <Icon />
+                </a>
+              ))}
+            </div>
+
+            <button className={styles.hamburger} onClick={() => setMobileOpen(true)} aria-label="Open menu">
+              <span /><span /><span />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -142,17 +152,18 @@ export default function Navbar({ locale }) {
             <div className={styles.mobileTop}>
               <span className={styles.brandText}>Fil <em>d'Or</em></span>
               <button className={styles.mobileClose} onClick={() => setMobileOpen(false)}>
-                Chiudi
+                {t('nav.close')}
               </button>
             </div>
             <motion.div
               className={styles.mobileLinks}
               initial="hidden"
               animate="visible"
-              variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
+              variants={{ visible: { transition: { staggerChildren: 0.04 } } }}
             >
               {[
                 { href: `${prefix}/lavoro`, label: t('nav.lavoro') },
+                { href: `${prefix}/grafica`, label: t('nav.grafica') },
                 { href: `${prefix}/chi-sono`, label: t('nav.chiSono') },
                 { href: `${prefix}/contatti`, label: t('nav.contatti') },
                 { href: `${prefix}/cerca`, label: t('nav.cerca') }
@@ -164,7 +175,7 @@ export default function Navbar({ locale }) {
                   <Link href={it.href} className={styles.mobileLink}>{it.label}</Link>
                 </motion.div>
               ))}
-              <div style={{ marginTop: '1rem' }} />
+              <div style={{ marginTop: '0.75rem' }} />
               {sectionSlugs.map((slug) => {
                 const Icon = sectionIcons[slug];
                 return (
@@ -180,6 +191,13 @@ export default function Navbar({ locale }) {
                 );
               })}
             </motion.div>
+            <div className={styles.mobileSocials}>
+              {socials.map(({ id, label, href, Icon }) => (
+                <a key={id} href={href} target="_blank" rel="noreferrer" aria-label={label}>
+                  <Icon width={22} height={22} />
+                </a>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

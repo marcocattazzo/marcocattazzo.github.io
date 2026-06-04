@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import ArticleCard from '../../../../components/ArticleCard';
 import { sectionIcons } from '../../../../components/SectionIcons';
 import { getArticlesBySection, getAllProjects, sectionSlugs } from '../../../../lib/mdx';
 import { locales } from '../../../../i18n';
@@ -11,6 +10,7 @@ import styles from './section.module.css';
 const sectionImg = {
   matematica: '/assets/math.png',
   'fede-e-chiesa': '/assets/faith.png',
+  musica: '/assets/mic.png',
   pensieri: '/assets/philosophy.png'
 };
 
@@ -30,7 +30,14 @@ export async function generateMetadata({ params: { locale, sezione } }) {
   return { title: `${t(`sections.${sezione}`)} — Fil d'Or` };
 }
 
-const PAGE_SIZE = 10;
+function fmtDate(d, locale) {
+  if (!d) return '';
+  try {
+    return new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'it-IT', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    }).format(new Date(d));
+  } catch { return d; }
+}
 
 export default async function SectionPage({ params: { locale, sezione } }) {
   if (!sectionSlugs.includes(sezione)) notFound();
@@ -38,7 +45,6 @@ export default async function SectionPage({ params: { locale, sezione } }) {
   const t = await getTranslations({ locale });
 
   const articles = getArticlesBySection(sezione, { locale });
-  const visible = articles.slice(0, PAGE_SIZE);
 
   const Icon = sectionIcons[sezione];
   const img = sectionImg[sezione];
@@ -47,7 +53,7 @@ export default async function SectionPage({ params: { locale, sezione } }) {
   let relatedProjects = [];
   if (sezione === 'giochi') {
     relatedProjects = getAllProjects({ locale }).filter((p) =>
-      (p.tags || []).some((t) => /game|dobble|gioch/i.test(t))
+      (p.tags || []).some((tag) => /game|dobble|gioch/i.test(tag))
     );
   }
 
@@ -56,29 +62,53 @@ export default async function SectionPage({ params: { locale, sezione } }) {
       <div className={styles.wrap}>
         <header className={styles.heroSection}>
           <div className={styles.icon}>
-            {img ? <Image src={img} alt="" width={64} height={64} /> : <Icon size={64} />}
+            {img ? <Image src={img} alt="" width={120} height={120} /> : <Icon size={120} />}
           </div>
+          <span className={styles.eyebrow}>Intrecci</span>
           <h1 className={styles.title}>{t(`sections.${sezione}`)}</h1>
-          <hr className={styles.divider} />
           <p className={styles.subtitle}>{t(`sectionSubtitles.${sezione}`)}</p>
+          <p className={styles.intro}>{t(`sectionIntros.${sezione}`)}</p>
+          <nav className={styles.anchorNav} aria-label="Navigazione interna">
+            <a href="#articoli">{t('sectionAnchors.articoli')}</a>
+            <a href="#note">{t('sectionAnchors.note')}</a>
+            <a href="#risorse">{t('sectionAnchors.risorse')}</a>
+          </nav>
         </header>
 
-        {visible.length === 0 ? (
+        <h2 id="articoli" className={styles.sectionHeading}>{t('sectionAnchors.articoli')}</h2>
+        {articles.length === 0 ? (
           <p className={styles.empty}>—</p>
         ) : (
           <div className={styles.list}>
-            {visible.map((a) => (
-              <ArticleCard
+            {articles.map((a) => (
+              <Link
                 key={a.slug}
-                article={a}
-                locale={locale}
-                sectionLabel={t(`sections.${a.section}`)}
-                showAbstract
-                showTags
-              />
+                href={`/${locale}/intrecci/${a.section}/${a.slug}`}
+                className={styles.articleCard}
+              >
+                <div className={styles.articleMeta}>
+                  <span className={styles.articleDate}>{fmtDate(a.date, locale)}</span>
+                  {a.tags?.[0] && <span className={styles.articleTag}>{a.tags[0]}</span>}
+                </div>
+                <h3 className={styles.articleTitle}>{a.title}</h3>
+                {a.abstract && <p className={styles.articleExcerpt}>{a.abstract}</p>}
+                {a.tags?.length > 1 && (
+                  <div className={styles.articleTags}>
+                    {a.tags.slice(1).map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </Link>
             ))}
           </div>
         )}
+
+        <h2 id="note" className={styles.sectionHeading}>{t('sectionAnchors.note')}</h2>
+        <p className={styles.empty}>—</p>
+
+        <h2 id="risorse" className={styles.sectionHeading}>{t('sectionAnchors.risorse')}</h2>
+        <p className={styles.empty}>—</p>
 
         {relatedProjects.length > 0 && (
           <section className={styles.relatedProjects}>

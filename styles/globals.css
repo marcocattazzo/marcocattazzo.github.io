@@ -2,36 +2,60 @@
 @import './typography.css';
 
 :root {
-  /* Palette */
-  --bg-deep:    #2E2B2A;
-  --bg-surface: #353130;
-  --bg-raised:  #3E3A38;
-  --bg-muted:   #4A4644;
+  /* Backgrounds (Palette M) */
+  --bg-deep:    #1A1A1C;
+  --bg-surface: #222226;
+  --bg-raised:  #2C2C30;
+  --bg-muted:   #484850;
 
-  --text-primary:   #F0E8CC;
-  --text-secondary: #D4C9A8;
-  --text-muted:     #9A9088;
-  --text-dim:       #5E5852;
+  /* Testo */
+  --text-primary:   #E2D8B8;
+  --text-secondary: #C8BFA0;
+  --text-muted:     #888894;
+  --text-dim:       #484850;
 
-  --gold-main:  #C8B07A;
-  --gold-light: #E0CC98;
-  --gold-dim:   #9A8050;
-  --gold-deep:  #5A4A28;
+  /* Oro */
+  --gold-main:  #BEA878;
+  --gold-light: #D8C898;
+  --gold-dim:   #8A7850;
+  --gold-deep:  #3A3020;
 
-  --border-subtle: #3E3A38;
-  --border-medium: #4A4644;
-  --border-gold:   #9A8050;
+  /* Bordi */
+  --border-subtle: #2C2C30;
+  --border-medium: #484850;
+  --border-gold:   #8A7850;
+
+  /* Tipografia */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'EB Garamond', Georgia, serif;
+  --font-ui:      'Outfit', system-ui, sans-serif;
+
+  /* Scala tipografica */
+  --text-hero:  clamp(32px, 5vw, 52px);
+  --text-h2:    clamp(22px, 3vw, 34px);
+  --text-h3:    20px;
+  --text-body:  16px;
+  --text-small: 14px;
+  --text-label: 11px;
+
+  /* Spaziatura */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  32px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
 
   /* Layout */
   --max-content: 1200px;
-  --max-prose: 680px;
-  --nav-height: 64px;
+  --max-prose:   680px;
+  --nav-height:  68px;
 }
 
 html, body {
   background: var(--bg-deep);
   color: var(--text-primary);
-  font-family: 'EB Garamond', Georgia, serif;
+  font-family: var(--font-body);
 }
 
 a {
@@ -50,17 +74,17 @@ a:hover {
 .container {
   max-width: var(--max-content);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-lg);
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.25rem;
+    padding: 0 var(--space-md);
   }
 }
 
 .label {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 400;
   font-size: var(--text-label);
   letter-spacing: 0.1em;
@@ -69,7 +93,7 @@ a:hover {
 }
 
 .label-gold {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 500;
   font-size: var(--text-label);
   letter-spacing: 0.1em;
@@ -81,7 +105,7 @@ a:hover {
   display: inline-block;
   background: var(--gold-main);
   color: var(--bg-deep);
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 500;
   font-size: var(--text-label);
   letter-spacing: 0.1em;
@@ -100,7 +124,7 @@ a:hover {
   display: inline-block;
   background: transparent;
   color: var(--text-muted);
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 400;
   font-size: var(--text-label);
   letter-spacing: 0.1em;
@@ -120,7 +144,7 @@ a:hover {
   background: var(--gold-deep);
   color: var(--gold-main);
   border: 0.5px solid var(--gold-dim);
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-weight: 400;
   font-size: 10px;
   letter-spacing: 0.08em;
@@ -141,15 +165,15 @@ a:hover {
   background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
   width: 100%;
   border: none;
-  margin: 4rem 0;
+  margin: var(--space-xl) 0;
 }
 
 section {
-  padding: 5rem 0;
+  padding: var(--space-xl) 0;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 3rem 0;
+    padding: var(--space-lg) 0;
   }
 }

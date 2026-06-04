@@ -59,11 +59,11 @@ export default async function LavoroPage({ params: { locale } }) {
             Una conversazione sulla tua sfida — tecnica, organizzativa, formativa — è il modo più rapido per capire se posso essere utile.
           </p>
           <div className={styles.ctaRow}>
-            <a href="/assets/curriculum.pdf" target="_blank" rel="noreferrer" className="btn-primary">
-              {t('lavoro.downloadCV')}
-            </a>
-            <Link href={`${prefix}/contatti`} className="btn-ghost">
+            <Link href={`${prefix}/contatti`} className="btn-primary">
               {t('lavoro.letsTalk')} →
+            </Link>
+            <Link href={`${prefix}/chi-sono`} className="btn-ghost">
+              {t('nav.chiSono')} →
             </Link>
           </div>
         </div>

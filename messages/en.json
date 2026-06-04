@@ -2,10 +2,12 @@
   "nav": {
     "intrecci": "Threads",
     "lavoro": "Work",
+    "grafica": "Design",
     "chiSono": "About",
     "contatti": "Contact",
     "curriculum": "Resume",
-    "cerca": "Search"
+    "cerca": "Search",
+    "close": "Close"
   },
   "sections": {
     "matematica": "Mathematics",
@@ -16,36 +18,62 @@
     "pensieri": "Thoughts"
   },
   "sectionSubtitles": {
-    "matematica": "Logic, ontology, structures. Rigor as a form of care.",
-    "fede-e-chiesa": "Theology, pastoral work, community. Thinking faith within time.",
-    "parole": "Ancient languages, semantics, philosophy of language.",
-    "musica": "Harmony, time, form. When mathematics sings.",
-    "giochi": "Combinatorics, game design, logic at play.",
-    "pensieri": "Notes, drafts, open fragments."
+    "matematica": "Logic as a form of care.",
+    "fede-e-chiesa": "Thinking faith within time.",
+    "parole": "The name carries the world.",
+    "musica": "Sound as structure.",
+    "giochi": "The rule as freedom.",
+    "pensieri": "The epistemological gap."
+  },
+  "sectionIntros": {
+    "matematica": "I study mathematics as a practice of thought, not as a toolbox of techniques. Logic, combinatorics, ontology of formal objects — instruments to inhabit the world of models with rigor, and to ask what survives the change of description.",
+    "fede-e-chiesa": "Theology, pastoral work, liturgy: three ways of thinking faith within time. Synodality is not an organizational opinion, it is a grammar of deciding together. The liturgy is not theater, it is a form of common knowing.",
+    "parole": "Every language carries a world inside its roots. Latin sees and classifies, Hebrew acts and names. To know a word fully is to hold its history in the palm — and to remember that whoever uses it today is inhabiting it without remembering anymore.",
+    "musica": "Cadences, modulations, fugues: music shares with logic a grammar of tension and resolution. Notes here on harmony, time, structure — and on those precise places where mathematics, having dropped the calculation, begins to sound.",
+    "giochi": "A perfect game is not a game without rules — it is a game whose rules have a structure. Combinatorial geometry, game theory, game design as thought made experienceable.",
+    "pensieri": "Short notes, open fragments, epistemological gaps. The model is not the territory: learning to read what the model is not saying is the subtlest discipline of rigor."
+  },
+  "sectionAnchors": {
+    "articoli": "Articles",
+    "note": "Notes",
+    "risorse": "Resources"
   },
   "home": {
     "eyebrow": "Fil d'Or — a space to think",
     "heroTitle": "Rigor and meaning.\nThe same thread.",
-    "heroBody": "I think about systems. Some are algorithms, some are communities, some are ancient texts. I study them with the same rigor and the same care.",
-    "ctaPrimary": "Explore",
-    "ctaSecondary": "Resume",
+    "heroBody": "I think about systems. Some are algorithms, some are communities, some are games. I study them with the same rigor and the same care.",
+    "ctaPrimary": "About",
+    "ctaSecondary": "Explore the threads",
+    "intrecciIntro": "Every discipline is a way of inhabiting the real. Mathematics measures it, faith dwells in it, words name it, music makes it vibrate. The golden thread runs through them all.",
     "threadsLabel": "Threads",
     "recentLabel": "Recent",
     "allArticles": "All articles"
   },
   "lavoro": {
     "title": "Work",
-    "bio": "I work on modeling complex problems, applied formal logic, and training in structured thinking. I'm a bridge between theoretical rigor and practical application — in technical, organizational, and educational contexts.",
+    "bio": "I model complex problems. Some are optimization algorithms, some are organizations, some are systems of meaning. The tool changes, the method does not.",
     "talks": "Talks & Speaking",
     "downloadCV": "Download CV",
     "letsTalk": "Let's talk"
   },
+  "grafica": {
+    "title": "Design",
+    "subtitle": "The mark as a form of thought. Composition is not decoration: it is structure made visible.",
+    "manifesto": "I approach design as writing: search for the right proportion, attention to rhythm, cut by subtraction. Good images don't add — they remove whatever obstructed meaning.",
+    "toolsLabel": "Tools",
+    "portfolioLabel": "Works",
+    "formationLink": "See the training path →"
+  },
   "chiSono": {
     "title": "About",
     "bio": "I study systems — formal, human, linguistic. My background is in theoretical mathematics, with a parallel path through theology, pastoral work, and philosophy of language. I don't see them as separate worlds. The golden thread connects them.",
-    "formazione": "Education",
-    "interessi": "Interests",
-    "comeLavoro": "How I work"
+    "intro": "Introduction",
+    "formazioneMat": "Mathematical training",
+    "formazioneTeo": "Theological training",
+    "esperienzePast": "Pastoral work",
+    "graficaDesign": "Design",
+    "cvLinkBlock": "Want to see my full path as a curriculum?",
+    "cvLinkCta": "Go to the Curriculum page →"
   },
   "contatti": {
     "title": "Contact",
@@ -70,6 +98,6 @@
   },
   "footer": {
     "tagline": "A space to think.",
-    "copyright": "Fil d'Or"
+    "thread": "The same thread, from the start, every time."
   }
 }
