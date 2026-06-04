@@ -59,7 +59,7 @@ const talks = [
 export default async function CurriculumPage({ params: { locale } }) {
   setRequestLocale(locale);
   const projects = getAllProjects({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
 
   return (
     <div className={styles.shell}>
@@ -89,7 +89,7 @@ export default async function CurriculumPage({ params: { locale } }) {
           {sections.map((s) => (
             <a key={s.id} href={`#${s.id}`}>{s.label}</a>
           ))}
-          <Link href={prefix || '/'} style={{ color: 'var(--gold-main)' }}>← Torna al sito</Link>
+          <Link href={prefix} style={{ color: 'var(--gold-main)' }}>← Torna al sito</Link>
         </nav>
 
         <div className={styles.sideThread}>
@@ -209,7 +209,7 @@ export default async function CurriculumPage({ params: { locale } }) {
               </div>
               <div className={styles.contactItem}>
                 <span className="label">Sito</span>
-                <Link href={prefix || '/'}>fildor — torna al sito</Link>
+                <Link href={prefix}>fildor — torna al sito</Link>
               </div>
             </div>
           </div>

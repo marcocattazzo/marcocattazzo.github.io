@@ -28,7 +28,7 @@ export default async function ProjectPage({ params: { locale, slug } }) {
   const project = getProject(slug, { locale });
   if (!project) notFound();
   const t = await getTranslations({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
 
   let related = null;
   if (project.relatedArticle) {

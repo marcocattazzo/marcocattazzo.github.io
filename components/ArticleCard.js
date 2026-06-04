@@ -15,7 +15,7 @@ function fmtDate(d, locale) {
 }
 
 export default function ArticleCard({ article, locale, sectionLabel, showAbstract = true, showTags = false }) {
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
   const href = `${prefix}/intrecci/${article.section}/${article.slug}`;
 
   return (

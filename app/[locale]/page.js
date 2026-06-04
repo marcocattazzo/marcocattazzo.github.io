@@ -10,7 +10,7 @@ import styles from './home.module.css';
 export default async function HomePage({ params: { locale } }) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
 
   const articles = getAllArticles({ locale });
   const recent = [];

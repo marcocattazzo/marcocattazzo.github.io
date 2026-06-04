@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 export default function SearchBar({ locale, label = 'Cerca' }) {
-  const prefix = locale === 'it' ? '' : `/${locale}`;
+  const prefix = `/${locale}`;
   return (
     <Link
       href={`${prefix}/cerca`}
