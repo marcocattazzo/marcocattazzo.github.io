@@ -1,0 +1,129 @@
+:root {
+  --text-hero:  clamp(32px, 5vw, 52px);
+  --text-h2:    clamp(22px, 3vw, 34px);
+  --text-h3:    20px;
+  --text-body:  16px;
+  --text-small: 14px;
+  --text-label: 11px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+p {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: var(--text-body);
+  line-height: 1.85;
+  color: var(--text-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+.prose {
+  max-width: 65ch;
+}
+
+.prose p + p {
+  margin-top: 1.25rem;
+}
+
+.prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--gold-main);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.prose code {
+  font-family: 'Outfit', ui-monospace, monospace;
+  font-size: 0.9em;
+  background: var(--bg-surface);
+  padding: 2px 6px;
+  border: 0.5px solid var(--border-subtle);
+}
+
+.prose pre {
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-subtle);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: var(--text-small);
+  line-height: 1.6;
+}
+
+.prose pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.prose ul li {
+  list-style: disc;
+  margin-bottom: 0.5rem;
+}
+
+.prose ol li {
+  list-style: decimal;
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: var(--gold-main);
+  border-bottom: 0.5px solid var(--gold-dim);
+}
+
+.prose a:hover {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+}
+
+.prose img {
+  margin: 2rem auto;
+}
+
+.prose figcaption {
+  font-style: italic;
+  font-size: var(--text-small);
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 0.5rem;
+}

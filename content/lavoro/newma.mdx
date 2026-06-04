@@ -1,0 +1,42 @@
+---
+title: "NEWMA — Modellazione probabilistica e verifica formale"
+slug: "newma"
+date: "2024-11-10"
+year: "2024"
+category: "Ricerca applicata"
+abstract: "Progetto di ricerca su metodi di verifica formale applicati a sistemi probabilistici. Relazione tecnica e qualitativa disponibili."
+tags: ["verifica formale", "probabilità", "ricerca"]
+lang: "it"
+pdfs:
+  - { label: "Relazione tecnica", file: "/assets/progetto_newma_relazione_tecnica.pdf" }
+  - { label: "Relazione qualitativa", file: "/assets/progetto_newma_relazione_qualitativa.pdf" }
+---
+
+## Problema
+
+Sistemi che modellano fenomeni stocastici hanno garanzie deboli: si verifica empiricamente che funzionino, raramente si dimostra formalmente che *funzioneranno* nei casi che non abbiamo visto. NEWMA nasce per costruire una pipeline di verifica che combini analisi formale e validazione probabilistica.
+
+## Approccio
+
+Il sistema sotto analisi è descritto come una **catena di Markov a tempo discreto** con stati osservabili e parametri appresi da dati. La verifica avviene su due livelli:
+
+1. **Proprietà strutturali** — verificate via model checking probabilistico (PCTL).
+2. **Garanzie di concentrazione** — vincoli di Chernoff/Hoeffding sui parametri appresi.
+
+## Modellazione
+
+Il cuore tecnico è la connessione tra le due verifiche: una proprietà PCTL fissata sull'astrazione formale rimane valida sull'istanza concreta se gli scostamenti dei parametri stanno dentro le soglie probabilistiche stabilite.
+
+> Verificare formalmente un sistema probabilistico non vuol dire eliminare l'incertezza. Vuol dire **quantificarla** in modo che le decisioni a valle la sappiano gestire.
+
+## Risultati
+
+- Pipeline funzionante su tre casi studio.
+- Specifica delle soglie come funzione del numero di campioni.
+- Documentazione tecnica e qualitativa (vedi PDF sotto).
+
+## Insight
+
+La verifica formale è spesso vista come l'opposto della pratica applicata. NEWMA mostra che la separazione è artificiale: la verifica diventa utile esattamente quando accetta di lavorare con dati rumorosi e parametri incerti.
+
+→ Articoli correlati: [Lo scarto epistemologico](/intrecci/pensieri/scarto-epistemologico).
