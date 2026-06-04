@@ -2,7 +2,6 @@
   "nav": {
     "intrecci": "Intrecci",
     "lavoro": "Lavoro",
-    "grafica": "Grafica",
     "chiSono": "Chi Sono",
     "contatti": "Contatti",
     "curriculum": "Curriculum",
@@ -15,6 +14,7 @@
     "parole": "Parole",
     "musica": "Musica",
     "giochi": "Giochi",
+    "grafica": "Grafica",
     "pensieri": "Pensieri"
   },
   "sectionSubtitles": {
@@ -23,6 +23,7 @@
     "parole": "Il nome porta il mondo.",
     "musica": "Il suono come struttura.",
     "giochi": "La regola come libertà.",
+    "grafica": "Segno, tratto, rappresentazione, simbolo.",
     "pensieri": "Lo scarto epistemologico."
   },
   "sectionIntros": {
@@ -31,6 +32,7 @@
     "parole": "Ogni lingua porta un mondo dentro le sue radici. Il latino vede e classifica, l'ebraico agisce e nomina. Conoscere una parola fino in fondo è tenere in palmo la sua storia — e ricordarsi che chi la usa, oggi, la sta abitando senza più ricordarla.",
     "musica": "Cadenze, modulazioni, fughe: la musica condivide con la logica una grammatica di tensione e risoluzione. Qui appunti su armonia, tempo, struttura — e su quei luoghi precisi in cui la matematica, smesso il calcolo, comincia a suonare.",
     "giochi": "Un gioco perfetto non è un gioco senza regole — è un gioco le cui regole hanno una struttura. Geometria combinatoria, teoria dei giochi, game design come pensiero che si fa esperibile.",
+    "grafica": "Il segno prima della parola. Un tratto è già una decisione: dove cominciare, dove fermarsi, cosa lasciare fuori. Qui si pensa la grafica come ontologia minima della rappresentazione — il simbolo che dice e tace, la composizione che sceglie, l'immagine che non illustra ma argomenta.",
     "pensieri": "Note brevi, frammenti aperti, scarti epistemologici. Il modello non è il territorio: imparare a leggere ciò che il modello non sta dicendo è la disciplina più sottile del rigore."
   },
   "sectionAnchors": {
@@ -56,13 +58,19 @@
     "downloadCV": "Scarica CV",
     "letsTalk": "Parliamo"
   },
-  "grafica": {
-    "title": "Grafica",
-    "subtitle": "Il segno come forma di pensiero. La composizione non è decorazione: è struttura che si vede.",
-    "manifesto": "Lavoro al design come a una scrittura: cerca della giusta proporzione, attenzione al ritmo, taglio per sottrazione. Le buone immagini non aggiungono nulla — tolgono quel che ostacolava il senso.",
-    "toolsLabel": "Strumenti",
-    "portfolioLabel": "Lavori",
-    "formationLink": "Vedi il percorso formativo →"
+  "ambiti": {
+    "matematica": "Matematica studiata",
+    "teologia": "Teologia studiata",
+    "pastorale": "Esperienze pastorali",
+    "grafica": "Pratica grafica",
+    "intro": {
+      "matematica": "Tutto ciò su cui mi sono fermato, anno per anno. Argomenti, sottostrutture, autori — il modo in cui un matematico costruisce il proprio territorio.",
+      "teologia": "I percorsi di studio teologico, sistematici e occasionali: scuola di teologia, esami di liturgia, letture personali.",
+      "pastorale": "Comunità, ruoli, contesti. La pastorale come pensiero che si fa pratica.",
+      "grafica": "Strumenti, tecniche, ambiti del lavoro grafico — la grammatica del segno declinata in pratica."
+    },
+    "detailLink": "Pagina dettagliata →",
+    "backToChiSono": "← Torna a Chi sono"
   },
   "chiSono": {
     "title": "Chi sono",

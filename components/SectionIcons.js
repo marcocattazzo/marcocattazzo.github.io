@@ -68,6 +68,30 @@ export function FedeIcon({ size = 32 }) {
   );
 }
 
+export function GraficaIcon({ size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      {/* nib + brush stroke + ink dot */}
+      <path
+        d="M5 26 C 10 16, 16 12, 24 10"
+        stroke={stroke}
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M24 10 L26 8 L28 10 L26 12 Z"
+        stroke={stroke}
+        strokeWidth="1.1"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <circle cx="7" cy="24" r="1.2" fill={stroke} stroke="none" />
+      <path d="M9 22 L11 20" stroke={stroke} strokeWidth="0.7" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  );
+}
+
 export function PensieriIcon({ size = 32 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -83,5 +107,6 @@ export const sectionIcons = {
   parole: ParoleIcon,
   musica: MusicaIcon,
   giochi: GiochiIcon,
+  grafica: GraficaIcon,
   pensieri: PensieriIcon
 };

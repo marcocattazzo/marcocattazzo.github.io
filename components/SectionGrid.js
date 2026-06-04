@@ -13,6 +13,7 @@ const sections = [
   { slug: 'parole', img: null },
   { slug: 'musica', img: '/assets/mic.png' },
   { slug: 'giochi', img: null },
+  { slug: 'grafica', img: null },
   { slug: 'pensieri', img: '/assets/philosophy.png' }
 ];
 

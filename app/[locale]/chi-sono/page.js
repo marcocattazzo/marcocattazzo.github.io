@@ -136,6 +136,9 @@ export default async function ChiSonoPage({ params: { locale } }) {
               <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
             ))}
           </StaggeredList>
+          <Link href={`${prefix}/chi-sono/matematica`} className={styles.detailCta}>
+            {t('ambiti.matematica')} — {t('ambiti.detailLink')}
+          </Link>
         </section>
 
         <section id="teologia" className={styles.section}>
@@ -148,6 +151,9 @@ export default async function ChiSonoPage({ params: { locale } }) {
               <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
             ))}
           </StaggeredList>
+          <Link href={`${prefix}/chi-sono/teologia`} className={styles.detailCta}>
+            {t('ambiti.teologia')} — {t('ambiti.detailLink')}
+          </Link>
         </section>
 
         <section id="pastorali" className={styles.section}>
@@ -160,6 +166,9 @@ export default async function ChiSonoPage({ params: { locale } }) {
               <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
             ))}
           </StaggeredList>
+          <Link href={`${prefix}/chi-sono/pastorale`} className={styles.detailCta}>
+            {t('ambiti.pastorale')} — {t('ambiti.detailLink')}
+          </Link>
         </section>
 
         <section id="grafica" className={styles.section}>
@@ -172,6 +181,9 @@ export default async function ChiSonoPage({ params: { locale } }) {
               <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
             ))}
           </StaggeredList>
+          <Link href={`${prefix}/chi-sono/grafica`} className={styles.detailCta}>
+            {t('ambiti.grafica')} — {t('ambiti.detailLink')}
+          </Link>
 
           <div className={styles.cvBlock}>
             <p className={styles.cvBlockText}>{t('chiSono.cvLinkBlock')}</p>
