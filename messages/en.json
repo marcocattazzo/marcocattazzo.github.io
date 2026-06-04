@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "intrecci": "Threads",
+    "lavoro": "Work",
+    "chiSono": "About",
+    "contatti": "Contact",
+    "curriculum": "Resume",
+    "cerca": "Search"
+  },
+  "sections": {
+    "matematica": "Mathematics",
+    "fede-e-chiesa": "Faith & Church",
+    "parole": "Words",
+    "musica": "Music",
+    "giochi": "Games",
+    "pensieri": "Thoughts"
+  },
+  "sectionSubtitles": {
+    "matematica": "Logic, ontology, structures. Rigor as a form of care.",
+    "fede-e-chiesa": "Theology, pastoral work, community. Thinking faith within time.",
+    "parole": "Ancient languages, semantics, philosophy of language.",
+    "musica": "Harmony, time, form. When mathematics sings.",
+    "giochi": "Combinatorics, game design, logic at play.",
+    "pensieri": "Notes, drafts, open fragments."
+  },
+  "home": {
+    "eyebrow": "Fil d'Or — a space to think",
+    "heroTitle": "Rigor and meaning.\nThe same thread.",
+    "heroBody": "I think about systems. Some are algorithms, some are communities, some are ancient texts. I study them with the same rigor and the same care.",
+    "ctaPrimary": "Explore",
+    "ctaSecondary": "Resume",
+    "threadsLabel": "Threads",
+    "recentLabel": "Recent",
+    "allArticles": "All articles"
+  },
+  "lavoro": {
+    "title": "Work",
+    "bio": "I work on modeling complex problems, applied formal logic, and training in structured thinking. I'm a bridge between theoretical rigor and practical application — in technical, organizational, and educational contexts.",
+    "talks": "Talks & Speaking",
+    "downloadCV": "Download CV",
+    "letsTalk": "Let's talk"
+  },
+  "chiSono": {
+    "title": "About",
+    "bio": "I study systems — formal, human, linguistic. My background is in theoretical mathematics, with a parallel path through theology, pastoral work, and philosophy of language. I don't see them as separate worlds. The golden thread connects them.",
+    "formazione": "Education",
+    "interessi": "Interests",
+    "comeLavoro": "How I work"
+  },
+  "contatti": {
+    "title": "Contact",
+    "intro": "Reach out for projects, collaborations, or a conversation.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search articles…",
+    "noResults": "No results.",
+    "results": "results"
+  },
+  "article": {
+    "previous": "Previous",
+    "next": "Next",
+    "relatedProject": "Related project",
+    "readAlso": "Read also",
+    "comments": "Comments"
+  },
+  "footer": {
+    "tagline": "A space to think.",
+    "copyright": "Fil d'Or"
+  }
+}
