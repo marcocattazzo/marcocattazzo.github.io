@@ -1,0 +1,47 @@
+---
+title: "Ottimizzazione combinatoria — da SAT a ILP"
+slug: "sat-ottimizzazione"
+date: "2024-06-20"
+year: "2024"
+category: "Informatica teorica"
+abstract: "Modellazione di problemi NP-hard tramite SAT/MaxSAT e ILP. Confronto tra approcci e analisi dei limiti epistemici dei modelli."
+tags: ["SAT", "ILP", "ottimizzazione"]
+lang: "it"
+---
+
+## Problema
+
+Quando un problema reale ha vincoli combinatori — assegnazioni, sequenze, sottoinsiemi — la scelta della formulazione cambia la fattibilità. SAT, MaxSAT e ILP sono tre lenti diversi, ognuna con i suoi punti ciechi.
+
+## Approccio
+
+Tre casi studio con la stessa famiglia di problemi:
+
+1. **Scheduling vincolato** — formulato come MaxSAT e come ILP. Confronto su istanze reali.
+2. **Coverage minimo** — formulato come ILP con risoluzione branch-and-cut.
+3. **Constraint satisfaction puro** — SAT modulo theories (SMT) per integrare vincoli aritmetici.
+
+## Modellazione
+
+```python
+from pulp import LpProblem, LpVariable, lpSum, LpBinary, LpMinimize
+
+prob = LpProblem("coverage", LpMinimize)
+x = [LpVariable(f"x{i}", cat=LpBinary) for i in range(n)]
+prob += lpSum(x)
+for j in range(m):
+    prob += lpSum(x[i] for i in subsets[j]) >= 1
+prob.solve()
+```
+
+## Risultati
+
+- MaxSAT competitivo su istanze piccole-medie con molti vincoli logici "duri".
+- ILP più robusto su istanze grandi con struttura aritmetica.
+- SMT vincente quando i vincoli mescolano logica e aritmetica.
+
+## Insight
+
+Il vero limite non è il solver: è il modello. Una buona formulazione vale dieci volte più della scelta dell'engine. E una buona formulazione richiede di sapere cosa il modello *non* sta dicendo.
+
+> La domanda giusta sceglie da sola lo strumento.

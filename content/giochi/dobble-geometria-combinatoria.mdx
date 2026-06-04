@@ -1,0 +1,34 @@
+---
+title: "Dobble e la geometria combinatoria — come nasce un gioco perfetto"
+date: "2025-04-12"
+abstract: "Perché due carte di Dobble hanno sempre esattamente un simbolo in comune? La risposta sta nei piani proiettivi finiti."
+section: "giochi"
+tags: ["combinatoria", "geometria proiettiva", "game design"]
+lang: "it"
+progetto: "dobble"
+---
+
+## La proprietà che fa il gioco
+
+Dobble ha una regola sola: due carte qualsiasi condividono esattamente *un* simbolo. Questa proprietà non è arbitraria: corrisponde alla definizione di un **piano proiettivo finito**.
+
+Un piano proiettivo di ordine $n$ ha:
+- $n^2 + n + 1$ punti
+- $n^2 + n + 1$ rette
+- ogni retta contiene $n + 1$ punti
+- per due punti passa esattamente una retta
+- due rette si intersecano in esattamente un punto
+
+## Il mazzo come piano
+
+Pensa ogni simbolo come un **punto** e ogni carta come una **retta**. La regola "due rette si intersecano in un punto" è esattamente "due carte condividono un simbolo".
+
+Per un Dobble di ordine $7$: $7^2 + 7 + 1 = 57$ carte, $57$ simboli totali, $8$ simboli per carta. Il mazzo commerciale ne usa $55$.
+
+> Un gioco perfetto non è un gioco senza regole. È un gioco le cui regole hanno una struttura.
+
+## Dove fallisce
+
+I piani proiettivi finiti esistono per ogni ordine $n$ potenza di primo. Per $n=6$ non esistono (Bruck-Ryser, Lam). È un risultato profondo che mostra quanto i giochi vivano dentro la matematica.
+
+→ Vedi anche il progetto correlato [Dobble](/lavoro/dobble).

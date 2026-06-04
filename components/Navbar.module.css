@@ -1,0 +1,209 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg-deep);
+  border-bottom: 0.5px solid transparent;
+  transition: border-color 200ms ease;
+}
+
+.nav.scrolled {
+  border-bottom-color: var(--border-subtle);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brandText {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.brandTextItalic {
+  font-style: italic;
+  color: var(--gold-main);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.linkItem {
+  position: relative;
+}
+
+.link, .dropdownButton {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.link:hover, .dropdownButton:hover {
+  color: var(--gold-main);
+}
+
+.linkActive {
+  color: var(--gold-main);
+  font-weight: 500;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: -1rem;
+  min-width: 240px;
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-subtle);
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  color: var(--text-muted);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.dropdownItem:hover {
+  background: var(--bg-raised);
+  color: var(--gold-main);
+}
+
+.langSwitch {
+  display: flex;
+  gap: 0.5rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.langSwitch a {
+  color: var(--text-muted);
+}
+
+.langSwitch a:hover {
+  color: var(--gold-main);
+}
+
+.langActive {
+  color: var(--gold-main) !important;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 0.5px;
+  background: var(--gold-main);
+}
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-deep);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.mobileTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.mobileClose {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobileLink {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobileLink:hover {
+  color: var(--gold-main);
+}
+
+.mobileSection {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .inner {
+    padding: 0 1.25rem;
+  }
+}

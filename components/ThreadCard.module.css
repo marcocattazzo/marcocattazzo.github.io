@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-subtle);
+  padding: 1.5rem;
+  transition: border-color 200ms ease, background 200ms ease, transform 200ms ease;
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--border-gold);
+  background: var(--bg-raised);
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+  color: var(--gold-main);
+}
+
+.label {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--text-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-main);
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.titleItalic {
+  font-style: italic;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  color: var(--text-dim);
+  transition: transform 200ms ease, color 200ms ease;
+}
