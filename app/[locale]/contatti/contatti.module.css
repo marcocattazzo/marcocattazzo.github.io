@@ -1,0 +1,113 @@
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: var(--text-hero);
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--text-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.input, .textarea {
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-subtle);
+  padding: 0.85rem 1rem;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16px;
+  color: var(--text-primary);
+  transition: border-color 200ms;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--border-gold);
+}
+
+.textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.submitRow {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+}
+
+.submit {
+  background: var(--gold-main);
+  color: var(--bg-deep);
+  border: 0.5px solid var(--gold-main);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--text-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 200ms, color 200ms;
+}
+
+.submit:hover {
+  background: var(--gold-light);
+}
+
+.contactInfo {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.infoLabel {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: var(--text-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  min-width: 80px;
+}

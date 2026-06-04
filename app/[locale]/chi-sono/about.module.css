@@ -1,0 +1,109 @@
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: var(--text-hero);
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.bio {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  max-width: 60ch;
+}
+
+.section {
+  margin-top: 3.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid var(--border-subtle);
+}
+
+.entry:last-child { border-bottom: none; }
+
+.entryTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--text-primary);
+}
+
+.entryMeta {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.entryDesc {
+  font-family: 'EB Garamond', Georgia, serif;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 0.4rem;
+}
+
+.interestsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.interestCard {
+  padding: 1rem 1.25rem;
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-subtle);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  color: var(--text-secondary);
+  text-align: center;
+  transition: border-color 200ms, color 200ms;
+}
+
+.interestCard:hover {
+  border-color: var(--border-gold);
+  color: var(--gold-main);
+}
+
+.howIWork {
+  font-family: 'EB Garamond', Georgia, serif;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+.links {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "fildor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next-intl": "^3.25.0",
+    "framer-motion": "^11.3.19",
+    "next-mdx-remote": "^5.0.0",
+    "gray-matter": "^4.0.3",
+    "katex": "^0.16.11",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0",
+    "shiki": "^1.12.0",
+    "lunr": "^2.3.9",
+    "@giscus/react": "^3.0.0"
+  }
+}

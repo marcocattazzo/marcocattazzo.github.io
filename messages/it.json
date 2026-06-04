@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "intrecci": "Intrecci",
+    "lavoro": "Lavoro",
+    "chiSono": "Chi Sono",
+    "contatti": "Contatti",
+    "curriculum": "Curriculum",
+    "cerca": "Cerca"
+  },
+  "sections": {
+    "matematica": "Matematica",
+    "fede-e-chiesa": "Fede e Chiesa",
+    "parole": "Parole",
+    "musica": "Musica",
+    "giochi": "Giochi",
+    "pensieri": "Pensieri"
+  },
+  "sectionSubtitles": {
+    "matematica": "Logica, ontologia, strutture. Rigore come forma di cura.",
+    "fede-e-chiesa": "Teologia, pastorale, comunità. Pensare la fede dentro il tempo.",
+    "parole": "Lingue antiche, semantica, filosofia del linguaggio.",
+    "musica": "Armonia, tempo, forma. Quando la matematica suona.",
+    "giochi": "Combinatoria, game design, logica che gioca.",
+    "pensieri": "Note, appunti, frammenti aperti."
+  },
+  "home": {
+    "eyebrow": "Fil d'Or — uno spazio per pensare",
+    "heroTitle": "Rigore e senso.\nLo stesso filo.",
+    "heroBody": "Penso sistemi. Alcuni sono algoritmi, alcuni sono comunità, alcuni sono testi antichi. Li studio con lo stesso rigore e la stessa cura.",
+    "ctaPrimary": "Esplora",
+    "ctaSecondary": "Curriculum",
+    "threadsLabel": "Intrecci",
+    "recentLabel": "Recenti",
+    "allArticles": "Tutti gli articoli"
+  },
+  "lavoro": {
+    "title": "Lavoro",
+    "bio": "Mi occupo di modellazione di problemi complessi, logica formale applicata e formazione al pensiero strutturato. Sono un ponte tra rigore teorico e applicazione pratica — in contesti tecnici, organizzativi, educativi.",
+    "talks": "Talks & Speaking",
+    "downloadCV": "Scarica CV",
+    "letsTalk": "Parliamo"
+  },
+  "chiSono": {
+    "title": "Chi sono",
+    "bio": "Studio sistemi — formali, umani, linguistici. Ho una formazione in matematica teorica e un percorso parallelo in teologia, pastorale e filosofia del linguaggio. Non li considero mondi separati. Il filo d'oro li unisce.",
+    "formazione": "Formazione",
+    "interessi": "Interessi",
+    "comeLavoro": "Come lavoro"
+  },
+  "contatti": {
+    "title": "Contatti",
+    "intro": "Scrivimi per progetti, collaborazioni, conversazioni.",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "send": "Invia"
+  },
+  "search": {
+    "title": "Cerca",
+    "placeholder": "Cerca tra gli articoli…",
+    "noResults": "Nessun risultato.",
+    "results": "risultati"
+  },
+  "article": {
+    "previous": "Precedente",
+    "next": "Successivo",
+    "relatedProject": "Progetto correlato",
+    "readAlso": "Leggi anche",
+    "comments": "Commenti"
+  },
+  "footer": {
+    "tagline": "Uno spazio per pensare.",
+    "copyright": "Fil d'Or"
+  }
+}
