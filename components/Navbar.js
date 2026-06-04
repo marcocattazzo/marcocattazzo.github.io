@@ -10,7 +10,7 @@ import { sectionIcons } from './SectionIcons';
 import { socialList } from './SocialIcons';
 import styles from './Navbar.module.css';
 
-const sectionSlugs = ['matematica', 'fede-e-chiesa', 'parole', 'musica', 'giochi', 'pensieri'];
+const sectionSlugs = ['matematica', 'fede-e-chiesa', 'parole', 'musica', 'giochi', 'grafica', 'pensieri'];
 
 export default function Navbar({ locale }) {
   const t = useTranslations();
@@ -105,12 +105,6 @@ export default function Navbar({ locale }) {
               {t('nav.lavoro')}
             </Link>
             <Link
-              href={`${prefix}/grafica`}
-              className={`${styles.link} ${isActive(`${prefix}/grafica`) ? styles.linkActive : ''}`}
-            >
-              {t('nav.grafica')}
-            </Link>
-            <Link
               href={`${prefix}/chi-sono`}
               className={`${styles.link} ${isActive(`${prefix}/chi-sono`) ? styles.linkActive : ''}`}
             >
@@ -163,7 +157,6 @@ export default function Navbar({ locale }) {
             >
               {[
                 { href: `${prefix}/lavoro`, label: t('nav.lavoro') },
-                { href: `${prefix}/grafica`, label: t('nav.grafica') },
                 { href: `${prefix}/chi-sono`, label: t('nav.chiSono') },
                 { href: `${prefix}/contatti`, label: t('nav.contatti') },
                 { href: `${prefix}/cerca`, label: t('nav.cerca') }

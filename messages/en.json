@@ -2,7 +2,6 @@
   "nav": {
     "intrecci": "Threads",
     "lavoro": "Work",
-    "grafica": "Design",
     "chiSono": "About",
     "contatti": "Contact",
     "curriculum": "Resume",
@@ -15,6 +14,7 @@
     "parole": "Words",
     "musica": "Music",
     "giochi": "Games",
+    "grafica": "Design",
     "pensieri": "Thoughts"
   },
   "sectionSubtitles": {
@@ -23,6 +23,7 @@
     "parole": "The name carries the world.",
     "musica": "Sound as structure.",
     "giochi": "The rule as freedom.",
+    "grafica": "Sign, mark, representation, symbol.",
     "pensieri": "The epistemological gap."
   },
   "sectionIntros": {
@@ -31,6 +32,7 @@
     "parole": "Every language carries a world inside its roots. Latin sees and classifies, Hebrew acts and names. To know a word fully is to hold its history in the palm — and to remember that whoever uses it today is inhabiting it without remembering anymore.",
     "musica": "Cadences, modulations, fugues: music shares with logic a grammar of tension and resolution. Notes here on harmony, time, structure — and on those precise places where mathematics, having dropped the calculation, begins to sound.",
     "giochi": "A perfect game is not a game without rules — it is a game whose rules have a structure. Combinatorial geometry, game theory, game design as thought made experienceable.",
+    "grafica": "The mark before the word. A stroke is already a decision: where to start, where to stop, what to leave out. Here graphic design is approached as a minimal ontology of representation — the symbol that says and is silent, the composition that chooses, the image that doesn't illustrate but argues.",
     "pensieri": "Short notes, open fragments, epistemological gaps. The model is not the territory: learning to read what the model is not saying is the subtlest discipline of rigor."
   },
   "sectionAnchors": {
@@ -56,13 +58,19 @@
     "downloadCV": "Download CV",
     "letsTalk": "Let's talk"
   },
-  "grafica": {
-    "title": "Design",
-    "subtitle": "The mark as a form of thought. Composition is not decoration: it is structure made visible.",
-    "manifesto": "I approach design as writing: search for the right proportion, attention to rhythm, cut by subtraction. Good images don't add — they remove whatever obstructed meaning.",
-    "toolsLabel": "Tools",
-    "portfolioLabel": "Works",
-    "formationLink": "See the training path →"
+  "ambiti": {
+    "matematica": "Mathematics studied",
+    "teologia": "Theology studied",
+    "pastorale": "Pastoral experience",
+    "grafica": "Design practice",
+    "intro": {
+      "matematica": "Everything I have lingered on, year by year. Topics, substructures, authors — the way a mathematician builds their own territory.",
+      "teologia": "Theological study paths, systematic and occasional: school of theology, liturgy exams, personal readings.",
+      "pastorale": "Communities, roles, contexts. Pastoral work as thought made practice.",
+      "grafica": "Tools, techniques, areas of graphic work — the grammar of the mark put into practice."
+    },
+    "detailLink": "Detail page →",
+    "backToChiSono": "← Back to About"
   },
   "chiSono": {
     "title": "About",

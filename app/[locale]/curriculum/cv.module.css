@@ -342,6 +342,33 @@
   margin-top: 0.4rem;
 }
 
+.detailLinks {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 0.5px dashed var(--border-medium);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detailLinks a {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.35rem 0;
+  border-bottom: 0.5px solid transparent;
+  transition: color 200ms, border-color 200ms;
+  align-self: flex-start;
+}
+
+.detailLinks a:hover {
+  color: var(--gold-main);
+  border-bottom-color: var(--gold-dim);
+}
+
 .portfolioGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

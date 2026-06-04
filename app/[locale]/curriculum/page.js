@@ -158,6 +158,10 @@ export default async function CurriculumPage({ params: { locale } }) {
                   </div>
                 ))}
               </div>
+              <div className={styles.detailLinks}>
+                <Link href={`${prefix}/chi-sono/matematica`}>Matematica studiata — Dettagli →</Link>
+                <Link href={`${prefix}/chi-sono/teologia`}>Teologia studiata — Dettagli →</Link>
+              </div>
             </div>
             <div className={styles.resumeCol}>
               <h3>Esperienza</h3>
@@ -170,6 +174,10 @@ export default async function CurriculumPage({ params: { locale } }) {
                     {e.desc && <div className={styles.timelineDesc}>{e.desc}</div>}
                   </div>
                 ))}
+              </div>
+              <div className={styles.detailLinks}>
+                <Link href={`${prefix}/chi-sono/pastorale`}>Esperienze pastorali — Dettagli →</Link>
+                <Link href={`${prefix}/chi-sono/grafica`}>Pratica grafica — Dettagli →</Link>
               </div>
             </div>
           </div>
