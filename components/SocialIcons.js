@@ -51,9 +51,9 @@ export function InstagramIcon(props) {
 
 export function socialList() {
   return [
-    { id: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com', Icon: LinkedInIcon },
+    { id: 'linkedin', label: 'LinkedIn', href: 'https://it.linkedin.com/in/marco-cattazzo-176a211a3', Icon: LinkedInIcon },
     { id: 'github', label: 'GitHub', href: 'https://github.com/marcocattazzo', Icon: GitHubIcon },
-    { id: 'facebook', label: 'Facebook', href: 'https://facebook.com', Icon: FacebookIcon },
-    { id: 'instagram', label: 'Instagram', href: 'https://instagram.com', Icon: InstagramIcon }
+    { id: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/marco.cattazzo.7', Icon: FacebookIcon },
+    { id: 'instagram', label: 'Instagram', href: 'https://instagram.com/marcocattazzo', Icon: InstagramIcon }
   ];
 }

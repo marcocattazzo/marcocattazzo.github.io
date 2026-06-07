@@ -10,22 +10,22 @@ export async function generateMetadata({ params: { locale } }) {
 
 const formazioneMat = [
   {
-    date: '2017 — 2020',
+    date: '2018 — 2024',
     title: 'Laurea triennale in Matematica',
     place: 'Università degli Studi di Milano',
     desc: 'Algebra, analisi, geometria, fondamenti.'
   },
   {
-    date: '2020 — 2023',
-    title: 'Laurea magistrale in Matematica',
+    date: '2024 — attuale',
+    title: 'Laurea magistrale in Matematica · In corso',
     place: 'Università degli Studi di Milano',
-    desc: 'Indirizzo logico-algebrico. Tesi su strutture combinatorie e verifica formale.'
+    desc: 'Indirizzo logico-algebrico. Lavoro su strutture combinatorie e verifica formale.'
   },
   {
-    date: '2023',
+    date: '2018',
     title: 'INDAM — Idoneità alla borsa di studio',
     place: 'Istituto Nazionale di Alta Matematica',
-    desc: 'Selezione per il dottorato in matematica.'
+    desc: 'Idoneità a borsa di studio per l\'iscrizione al corso di laurea in Matematica.'
   },
   {
     date: '2014 — 2018',
@@ -64,25 +64,37 @@ const formazioneTeo = [
 
 const esperienzePastorali = [
   {
-    date: '—',
+    date: '2019 — 2028',
     title: 'Animazione e coordinamento comunitario',
-    place: 'Decanato Seregno-Seveso',
-    desc: 'Placeholder per elenco preciso da integrare. Ruoli, periodi, contesti.'
+    place: 'Comunità Pastorale San Giovanni Paolo II, Seregno',
+    desc: 'Consigliere e membro di Giunta del Consiglio di Comunità Pastorale (due mandati). Percorso di Dialogo Interreligioso con la Diocesi di Milano e il Centro Islamico di Saronno (2020–2021).'
   },
   {
-    date: '—',
-    title: 'Direzione progetto innovativo diocesano',
-    place: 'Pastorale giovanile',
-    desc: 'Placeholder per descrizione completa.'
+    date: '2021 — 2024',
+    title: 'Tavoli ecclesiali regionali e diocesani',
+    place: 'Conferenza Episcopale Lombarda · Diocesi di Milano',
+    desc: 'Tavolo di Lavoro Giovani e Vescovi — Commissione Regionale Riti, CEL (2021–2024). Tavolo diocesano Movimenti e Associazioni — Consulta giovanile della Diocesi di Milano (2021).'
+  },
+  {
+    date: 'Settembre 2024',
+    title: 'Delegato CEI — 53° Congresso Eucaristico Internazionale',
+    place: 'Quito, Ecuador',
+    desc: 'Laico delegato della Conferenza Episcopale Italiana al Congresso Eucaristico Internazionale.'
+  },
+  {
+    date: '2017 →',
+    title: 'Servizio comunitario e volontariato',
+    place: 'Oratorio · AVIS',
+    desc: 'Educatore in oratorio (2017 →). Donatore AVIS (2018 →).'
   }
 ];
 
 const graficaDesign = [
   {
-    date: '—',
-    title: 'Identità visiva e composizione editoriale',
-    place: 'Strumenti: Figma, Illustrator, InDesign',
-    desc: 'Placeholder per portfolio progetti grafici. Tratto pulito, attenzione tipografica.'
+    date: '2015 — 2017',
+    title: 'Direzione editoriale e immagine — MAJOtivù',
+    place: 'Coordinamento redazione · Identità visiva',
+    desc: 'Coordinatore della redazione MAJOtivù: durante la direzione l\'attività si è aggiudicata diversi bandi europei, per alcune decine di migliaia di euro, reinvestiti nel potenziamento della strumentazione. Identità visiva, composizione editoriale e branding come pratica continuativa. Strumenti: Figma, Illustrator, InDesign, After Effects, Cinema 4D.'
   }
 ];
 
