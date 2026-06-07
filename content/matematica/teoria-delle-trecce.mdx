@@ -1,43 +1,156 @@
 ---
-title: "La matematica delle trecce — un gruppo che si fa con le mani"
-date: "2026-04-13"
-abstract: "Da come si annoda un braccialetto a un gruppo non commutativo. Le trecce sono un oggetto algebrico che si può letteralmente tenere in mano."
+title: "Teoria delle trecce — l'algebra fatta con le mani"
+date: "2026-06-05"
+abstract: "Una treccia annodata a mano è già un gruppo. Da un problema concreto — far passare un cordoncino tra quattro fili — nasce l'algebra astratta: operazione, inverso, generatori. E la soluzione arriva solo quando si smette di guardare la treccia intera e si impara a scomporla."
 section: "matematica"
-tags: ["topologia", "teoria dei gruppi", "trecce", "algebra"]
+tags: ["trecce", "gruppi", "topologia", "generatori", "gruppo-fondamentale", "algebra"]
 lang: "it"
-source: "Seminario Topologia algebrica con le mani — corde e trecce, Fuori Orario High School, 2022"
+source: "Seminario «Fuori Orario», Università di Milano (13 aprile 2022)"
+relatedArticle:
+  section: "giochi"
+  slug: "dobble-geometria-combinatoria"
 ---
 
-C'è un modo di entrare nell'algebra astratta che non parte dai simboli, ma dalle dita. Provate a intrecciare quattro cordoncini per fare un braccialetto. A un certo punto nascono domande oneste: *questa disposizione funziona con ogni filo? La forma di partenza è casuale o segue regole precise? Si potrebbe insegnare a una macchina a riprodurla?* Sono domande matematiche, anche se non sembrano.
+Davanti a una treccia di quattro fili, con un cordoncino in mano, il problema sembra solo manuale. È invece, fino in fondo, un problema di algebra. Per risolverlo non basta guardare meglio: bisogna imparare a non guardare la treccia intera.
 
-> Non fatevi spaventare dai simboli: stanno dietro al concetto, al significato.
+La parola *algebra* viene dall'arabo: significa unione, connessione, ma anche aggiustare, ricomporre. È esattamente quello che faremo. Prenderemo un gesto delle dita e lo ricomporremo in una struttura. Per non perderci lungo la strada terremo accanto due compagni noti — gli interi $\mathbb{Z}$ e i razionali $\mathbb{Q}$, con somma e prodotto — e a ogni passo chiederemo: qui le trecce si comportano come i numeri, o no?
 
-## Che cos'è una treccia
+## Un problema concreto
 
-Immaginiamo quattro fili che scendono dall'alto verso il basso, attraversandosi. Due trecce sono **la stessa treccia** se posso deformare con continuità l'una nell'altra senza tagliare i fili e senza far passare un filo attraverso un altro. Ogni treccia si compone di un numero finito di incroci: lavoriamo con *tame braids*, abbastanza regolari da poter essere descritti.
+Lo scopo è semplice da enunciare. Far entrare un cordoncino dalla sommità della treccia, farlo scorrere verso il basso tenendone tra pollice e indice le due estremità, e ottenere alla fine la figura giusta sotto al piano.
 
-Questa è già una scelta metodologica: rinunciare ai casi patologici (le spezzate "infinite", i cammini selvaggi) per tenere insieme intuizione geometrica e maneggevolezza algebrica.
+![Quattro fili intrecciati e un cordoncino da far passare attraverso di essi](/assets/articoli/teoria-delle-trecce/il-problema.png)
 
-## Perché è un gruppo
+*Il problema: inserire il cordoncino magenta dall'alto e farlo scendere fino a chiuderlo nella forma voluta alla base.*
 
-Sulle trecce si può definire un'**operazione**: incollare una treccia sotto l'altra. Il risultato è ancora una treccia con lo stesso numero di fili — l'operazione è *interna*. E soddisfa esattamente gli assiomi che fanno di un insieme un **gruppo**:
+Sembra una questione di pazienza. Lo è, in parte. Ma sotto la pazienza c'è una domanda più precisa: la forma di partenza del cordoncino è casuale, oppure segue regole esatte? E se segue regole, si possono scrivere — e magari affidare a una macchina?
 
-- **Associatività** — $(a \cdot b) \cdot c = a \cdot (b \cdot c)$: posso togliere le parentesi. (Fornire un'operazione associativa "bella" non è affatto scontato.)
-- **Elemento neutro** — la treccia che non incrocia nulla lascia tutto fermo; e l'elemento neutro è unico: è il primo teorema che si dimostra.
-- **Inverso** — ogni treccia ha la sua *treccia specchiata*, che disfa esattamente gli incroci.
+## Cosa è una treccia
 
-Manca una proprietà che diamo per scontata nei numeri: la **commutatività**.
+Definire con rigore cosa sia una treccia è sorprendentemente difficile. È un oggetto dello spazio, e si presta a descrizioni geometriche pesanti che oggi non ci servono. Ci affidiamo allora all'esperienza quotidiana: chiamiamo $B_n$ l'insieme delle trecce concrete a $n$ fili, con gli estremi fissati in alto e in basso.
 
-> Marco, ma se si comportano come i numeri, dove sta il problema? Il problema è che `aabaa` non è `aabaa` scambiato: l'ordine degli incroci conta.
+C'è però una sottigliezza che cambia tutto. Non lavoriamo davvero con trecce, ma con *classi* di trecce.
 
-$a \cdot b$ e $b \cdot a$ sono trecce diverse — lo si vede già proiettando sulla trasformazione che inducono. Le trecce sono un gruppo **non commutativo**: l'esempio "tenibile in mano" più semplice di una struttura in cui l'ordine delle operazioni cambia il risultato.
+> Due figure diverse possono appartenere alla stessa treccia: se l'una si deforma nell'altra senza tagli né strappi, sono la stessa cosa. La treccia è ciò che resta quando smettiamo di distinguere le sue forme.
 
-## Distinguere due trecce
+È una nozione che andrebbe formalizzata, e di nuovo ci fidiamo dei geometri che hanno fatto questo lavoro per noi. A noi basta una conseguenza concreta: poiché gli estremi sono fissati, due trecce della stessa classe hanno i fili colorati allo stesso modo in alto *e* in basso. Il colore in fondo è un primo, semplice testimone dell'identità.
 
-Come faccio a *dimostrare* che due trecce sono diverse, e non solo a sospettarlo? Serve un **invariante**: una quantità che resta uguale per trecce uguali, così che se differisce, le trecce sono certamente diverse. La via elegante è far **agire** le trecce: ogni treccia diventa una trasformazione dei cammini su un piano da cui ho tolto quattro punti (i "chiodi" attorno a cui i fili girano).
+## Un'operazione tra le trecce
 
-Quei cammini, a meno di deformazione continua, formano a loro volta un gruppo — il **gruppo fondamentale** del piano bucato, generato da quattro cappi: $\mathbb{Z} * \mathbb{Z} * \mathbb{Z} * \mathbb{Z}$, il prodotto libero. La treccia agisce mandando cappi in cappi, e questa azione è un **omomorfismo**: rispetta l'operazione. Corde che contengono un nodo continuano a contenerlo; corde che non ne contengono restano equivalenti alla corda nulla. È un invariante che vede ciò che l'occhio non distingue.
+Una struttura algebrica nasce quando su un insieme si definisce un'operazione. Tra le trecce ce n'è una naturale: si attaccano una sotto l'altra. La fine dei fili della prima diventa l'inizio dei fili della seconda. Chiamiamo questa concatenazione $\#$.
 
-## Che cosa abbiamo imparato
+Confrontiamola subito con i numeri. In $\mathbb{Z}$ scriviamo $3 + (-4) = -1$; in $B_4$ scriviamo $\alpha \# \beta = \alpha\beta$, dove a destra c'è semplicemente la treccia ottenuta appendendo $\beta$ sotto $\alpha$. L'operazione è *interna*: la concatenazione di due $n$-trecce è ancora una $n$-treccia. Da qui in avanti parleremo di quattro fili.
 
-Il punto non è la treccia. È il metodo: **scomporre** un oggetto complesso nei suoi generatori, **lavorare** un pezzo alla volta a mano, **ricostruire** la soluzione. È esattamente ciò che si fa per insegnare a qualcuno — o a una macchina — come riprodurre un braccialetto a partire dalla sua struttura. La matematica, qui, non è il calcolo: è il linguaggio che rende dicibile un gesto delle dita.
+**Associativa.** Concatenare $(\alpha\#\beta)\#\gamma$ o $\alpha\#(\beta\#\gamma)$ dà lo stesso risultato: i fili sono appesi nello stesso ordine, le parentesi non contano. Come $(3\times-2)\times-7 = 3\times(-2\times-7)$. Possiamo quindi togliere le parentesi senza ambiguità.
+
+**Non commutativa.** Qui arriva la prima frattura con i numeri. Scambiare il primo e il secondo filo, poi il secondo e il terzo, non è lo stesso che farlo nell'ordine inverso.
+
+> $\beta\alpha \neq \alpha\beta$. L'ordine conta. È la differenza più grande tra queste trecce e i numeri con cui abbiamo imparato a contare.
+
+**Elemento neutro.** Esiste la treccia che non fa nulla: i fili scendono dritti, paralleli. Concatenarla, sopra o sotto, lascia tutto invariato. Attenzione però: in un mondo non commutativo, per certificare che un elemento è neutro bisogna verificarlo *sia a destra sia a sinistra*. Non possiamo darlo per scontato da un solo lato.
+
+**Inverso.** Per ogni treccia $\alpha$ ne esiste una $\alpha^{-1}$ tale che $\alpha\#\alpha^{-1} = \mathbf{1}$. Si ottiene riflettendo la treccia: la sua immagine allo specchio disfa esattamente ciò che lei aveva fatto. Qui le trecce sono perfino più gentili dei numeri: in $(\mathbb{Z},\times)$ quasi nessun elemento ha inverso, mentre *ogni* treccia il suo ce l'ha.
+
+Abbiamo raccolto tutto ciò che serve per dare un nome a questa struttura.
+
+> Un **gruppo** è un insieme con un'operazione associativa, dotata di elemento neutro, in cui ogni elemento ha un inverso. $(B_4, \#)$ è un gruppo. Non commutativo, ma un gruppo a tutti gli effetti — esattamente come $(\mathbb{Z}, +)$.
+
+## Quando bastano poche mosse: i generatori
+
+Se doveste descrivere una treccia a un amico al telefono, senza disegni, come fareste? Probabilmente dettando una sequenza: *scambia il primo col secondo, poi il terzo col quarto, poi il secondo scavalca il primo*. Stareste usando i **generatori**.
+
+In $B_4$ i generatori sono gli scambi semplici di fili adiacenti — $\sigma_1, \sigma_2, \sigma_3$ — e i loro inversi $\sigma_1^{-1}, \sigma_2^{-1}, \sigma_3^{-1}$, che scambiano gli stessi fili nel verso opposto.
+
+> Ogni treccia è la concatenazione di un numero finito di scambi semplici. I generatori generano: bastano poche mosse elementari per dire qualunque treccia.
+
+Non è una pretesa esotica. Anche i numeri primi *generano* $(\mathbb{N},\times)$: ogni intero è un prodotto finito di primi. Ma c'è una differenza decisiva. Tra i primi l'ordine non conta, $2\times3 = 3\times2$. Tra i generatori delle trecce conta eccome:
+
+$$\sigma_1\,\sigma_2\,\sigma_1^{-1} \;\neq\; \sigma_1\,\sigma_1^{-1}\,\sigma_2$$
+
+A destra i primi due fattori si elidono e resta un semplice $\sigma_2$; a sinistra no. La scrittura `aabaa` non è la scrittura `aaba a`: nei gruppi non commutativi la sequenza è il significato.
+
+Eppure non tutto è rigido. Scambi che agiscono su fili lontani non si disturbano e si possono invertire liberamente:
+
+$$\sigma_1\,\sigma_3 \;=\; \sigma_3\,\sigma_1$$
+
+È un piccolo isola di commutatività dentro un mondo che, in generale, non perdona l'ordine.
+
+## Un secondo gruppo: il piano forato
+
+Finora abbiamo descritto i fili. Ma il problema riguarda il *cordoncino*, e il cordoncino vive su un altro piano — quello alla base della treccia, da cui spuntano i quattro fili come quattro chiodi piantati.
+
+Proiettiamo il cammino del cordoncino su quel piano, dimenticando gli accavallamenti. Resta una curva che gira intorno a quattro punti. Se la prendiamo orientata, con inizio e fine nello stesso punto, possiamo comporre due cammini uno dopo l'altro — ed ecco un'altra operazione, un altro gruppo.
+
+![Un cammino orientato che gira intorno ai quattro chiodi, a partire da un punto base](/assets/articoli/teoria-delle-trecce/cammino-fondamentale.png)
+
+*Un cammino chiuso e orientato attorno ai quattro punti. Il punto base, in arancio, è dove ogni cammino comincia e finisce.*
+
+Anche qui lavoriamo con classi: due cammini sono lo stesso elemento se uno si deforma con continuità nell'altro, come un elastico, senza mai attraversare i chiodi.
+
+> Questo è il **gruppo fondamentale** del piano a cui sono stati tolti quattro punti: l'invariante che misura quante volte, e come, un cammino può avvolgersi attorno a ciò che è stato rimosso.
+
+Anche questo gruppo ha i suoi generatori: quattro cappi elementari, $\gamma_1, \gamma_2, \gamma_3, \gamma_4$, ciascuno che gira una sola volta attorno a un solo chiodo.
+
+![Quattro cappi colorati, ognuno attorno a un chiodo, dal punto base](/assets/articoli/teoria-delle-trecce/generatori-cammini.png)
+
+*I quattro generatori del gruppo fondamentale: $\gamma_1, \gamma_2, \gamma_3, \gamma_4$. Ogni cappio avvolge un solo punto.*
+
+Con un po' di lavoro si dimostra che questi quattro cappi e i loro inversi bastano a generare ogni cammino. Il gruppo è di nuovo non commutativo; l'elemento neutro è la classe dei cammini che non avvolgono alcun chiodo; l'inverso di un cammino è lo stesso cammino percorso al contrario. La composizione di due cammini la scriviamo $\gamma_2 * \gamma_3$.
+
+![Composizione di cammini a partire dallo stesso punto base](/assets/articoli/teoria-delle-trecce/composizione-cammini.png)
+
+*Comporre due cammini significa percorrerli in successione, dallo stesso punto di partenza.*
+
+Strutturalmente non è il gruppo delle trecce. Eppure è associativo, ha neutro e inversi: un altro gruppo, nato da una geometria diversa, con lo stesso scheletro astratto.
+
+## Le trecce agiscono
+
+I due gruppi non vivono separati. Una treccia, fatta scorrere dall'alto verso il basso, *trascina* il cammino del cordoncino e lo trasforma in un altro cammino. Una treccia $b$ manda un cammino $\delta$ in un nuovo cammino $b(\delta)$.
+
+![Una treccia che trasforma un cammino sul piano forato](/assets/articoli/teoria-delle-trecce/trecce-agiscono.png)
+
+*La treccia agisce sul piano superiore: facendola scorrere, il cammino tracciato in cima viene deformato fino al cammino in basso.*
+
+Questa azione rispetta le strutture in modo notevole. Concatenare due trecce e poi agire equivale ad agire prima con l'una e poi con l'altra:
+
+$$b\#c\,(\delta) \;=\; c\big(b(\delta)\big)$$
+
+E ogni singola treccia, vista come trasformazione dei cammini, conserva la composizione:
+
+$$t(\alpha * \beta) \;=\; t(\alpha) * t(\beta)$$
+
+Una funzione che conserva l'operazione si chiama **omomorfismo**. Il logaritmo ne è l'esempio domestico: $\ln(xy) = \ln(x) + \ln(y)$, un ponte tra $(\mathbb{R}^+,\times)$ e $(\mathbb{R},+)$.
+
+> Ogni treccia è un omomorfismo del gruppo fondamentale del piano forato. Anzi, di più: poiché ogni treccia è invertibile, ogni sua trasformazione lo è — è un isomorfismo del gruppo dei cammini con se stesso.
+
+In una formula sola, mettendo insieme le due proprietà:
+
+$$b\#c\,(\alpha * \beta) \;=\; c\big(b(\alpha)\big) * c\big(b(\beta)\big)$$
+
+Si dice che il gruppo delle trecce **agisce** sull'insieme delle classi di cammini. Le trecce non sono più solo figure: sono mosse che muovono un altro mondo.
+
+## La soluzione, al contrario
+
+Ora abbiamo tutto. Il cammino che vogliamo ottenere in basso è semplice: un cappio attorno a due chiodi, $\gamma_2 * \gamma_3$. La treccia che ci separa da esso è data — la possiamo leggere, dall'alto verso il basso, come una parola nei generatori.
+
+La mossa è invertirla. Se la treccia trasforma il cammino che disporremo in cima nel cammino semplice in basso, allora il cammino da disporre in cima è l'immagine di $\gamma_2 * \gamma_3$ sotto la treccia *inversa*. Si scompone la treccia nei suoi scambi, si rovescia l'ordine e si cambiano i segni, e si lascia agire il tutto sul cappio semplice:
+
+$$\big(\sigma_2\,\sigma_1\,\sigma_1\,\sigma_3^{-1}\,\sigma_3^{-1}\big)^{-1}\,(\gamma_2 * \gamma_3) \;=\; \sigma_3\,\sigma_3\,\sigma_1^{-1}\,\sigma_1^{-1}\,\sigma_2^{-1}\,(\gamma_2 * \gamma_3) \;=\; \dots$$
+
+$$\dots \;=\; \gamma_1 * \gamma_2 * \gamma_3 * \gamma_2^{-1} * \gamma_1^{-1} * \gamma_4^{-1} * \gamma_2 * \gamma_4$$
+
+Quella sequenza di cappi, in quell'ordine preciso, è la forma esatta da dare al cordoncino prima di farlo scendere. Sembra arbitraria, contorta. Non lo è: è dettata, scambio per scambio, dalla treccia.
+
+![La soluzione: il cammino scomposto che scende attraverso i piani della treccia](/assets/articoli/teoria-delle-trecce/soluzione.png)
+
+*La soluzione vista per piani: il cammino complicato disposto in cima si semplifica man mano che attraversa gli scambi, fino al cappio voluto alla base.*
+
+## Cosa resta
+
+Eravamo partiti con un gesto delle dita e siamo arrivati a un'azione di gruppo. Lungo la strada abbiamo trovato una struttura per dire le trecce come concatenazione di scambi elementari; una seconda struttura per dire i cammini come composizione di cappi; e il ponte tra le due — ogni treccia che induce un isomorfismo dei cammini, e la concatenazione che si traduce nell'applicazione successiva delle trasformazioni.
+
+Il problema iniziale non si risolve fissando più a lungo la treccia. Si risolve nell'unico modo in cui l'algebra sa risolvere: scomponendo. Spezzare la treccia in generatori, fare a mano un pezzo alla volta, e ricomporre la soluzione dal verso opposto.
+
+> Forse è questo il guadagno vero, più della singola treccia sciolta. Imparare a non guardare l'oggetto intero — a tradurlo in mosse, e a fidarsi che le mosse, prese al contrario, riportino a casa.
+
+Resta una domanda, la stessa di partenza, ora con un peso diverso. Se ogni treccia è una parola, e ogni parola si rovescia, allora qualunque cordoncino si può sciogliere a tavolino. Ma c'è un limite a quanto l'algebra può sostituire le dita — e dove, esattamente, comincia quel limite?
