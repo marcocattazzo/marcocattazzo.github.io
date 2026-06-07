@@ -1,0 +1,43 @@
+---
+title: "La matematica delle trecce — un gruppo che si fa con le mani"
+date: "2026-04-13"
+abstract: "Da come si annoda un braccialetto a un gruppo non commutativo. Le trecce sono un oggetto algebrico che si può letteralmente tenere in mano."
+section: "matematica"
+tags: ["topologia", "teoria dei gruppi", "trecce", "algebra"]
+lang: "it"
+source: "Seminario Topologia algebrica con le mani — corde e trecce, Fuori Orario High School, 2022"
+---
+
+C'è un modo di entrare nell'algebra astratta che non parte dai simboli, ma dalle dita. Provate a intrecciare quattro cordoncini per fare un braccialetto. A un certo punto nascono domande oneste: *questa disposizione funziona con ogni filo? La forma di partenza è casuale o segue regole precise? Si potrebbe insegnare a una macchina a riprodurla?* Sono domande matematiche, anche se non sembrano.
+
+> Non fatevi spaventare dai simboli: stanno dietro al concetto, al significato.
+
+## Che cos'è una treccia
+
+Immaginiamo quattro fili che scendono dall'alto verso il basso, attraversandosi. Due trecce sono **la stessa treccia** se posso deformare con continuità l'una nell'altra senza tagliare i fili e senza far passare un filo attraverso un altro. Ogni treccia si compone di un numero finito di incroci: lavoriamo con *tame braids*, abbastanza regolari da poter essere descritti.
+
+Questa è già una scelta metodologica: rinunciare ai casi patologici (le spezzate "infinite", i cammini selvaggi) per tenere insieme intuizione geometrica e maneggevolezza algebrica.
+
+## Perché è un gruppo
+
+Sulle trecce si può definire un'**operazione**: incollare una treccia sotto l'altra. Il risultato è ancora una treccia con lo stesso numero di fili — l'operazione è *interna*. E soddisfa esattamente gli assiomi che fanno di un insieme un **gruppo**:
+
+- **Associatività** — $(a \cdot b) \cdot c = a \cdot (b \cdot c)$: posso togliere le parentesi. (Fornire un'operazione associativa "bella" non è affatto scontato.)
+- **Elemento neutro** — la treccia che non incrocia nulla lascia tutto fermo; e l'elemento neutro è unico: è il primo teorema che si dimostra.
+- **Inverso** — ogni treccia ha la sua *treccia specchiata*, che disfa esattamente gli incroci.
+
+Manca una proprietà che diamo per scontata nei numeri: la **commutatività**.
+
+> Marco, ma se si comportano come i numeri, dove sta il problema? Il problema è che `aabaa` non è `aabaa` scambiato: l'ordine degli incroci conta.
+
+$a \cdot b$ e $b \cdot a$ sono trecce diverse — lo si vede già proiettando sulla trasformazione che inducono. Le trecce sono un gruppo **non commutativo**: l'esempio "tenibile in mano" più semplice di una struttura in cui l'ordine delle operazioni cambia il risultato.
+
+## Distinguere due trecce
+
+Come faccio a *dimostrare* che due trecce sono diverse, e non solo a sospettarlo? Serve un **invariante**: una quantità che resta uguale per trecce uguali, così che se differisce, le trecce sono certamente diverse. La via elegante è far **agire** le trecce: ogni treccia diventa una trasformazione dei cammini su un piano da cui ho tolto quattro punti (i "chiodi" attorno a cui i fili girano).
+
+Quei cammini, a meno di deformazione continua, formano a loro volta un gruppo — il **gruppo fondamentale** del piano bucato, generato da quattro cappi: $\mathbb{Z} * \mathbb{Z} * \mathbb{Z} * \mathbb{Z}$, il prodotto libero. La treccia agisce mandando cappi in cappi, e questa azione è un **omomorfismo**: rispetta l'operazione. Corde che contengono un nodo continuano a contenerlo; corde che non ne contengono restano equivalenti alla corda nulla. È un invariante che vede ciò che l'occhio non distingue.
+
+## Che cosa abbiamo imparato
+
+Il punto non è la treccia. È il metodo: **scomporre** un oggetto complesso nei suoi generatori, **lavorare** un pezzo alla volta a mano, **ricostruire** la soluzione. È esattamente ciò che si fa per insegnare a qualcuno — o a una macchina — come riprodurre un braccialetto a partire dalla sua struttura. La matematica, qui, non è il calcolo: è il linguaggio che rende dicibile un gesto delle dita.

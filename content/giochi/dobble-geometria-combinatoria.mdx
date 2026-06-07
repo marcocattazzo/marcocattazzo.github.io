@@ -1,34 +1,40 @@
 ---
 title: "Dobble e la geometria combinatoria — come nasce un gioco perfetto"
-date: "2025-04-12"
-abstract: "Perché due carte di Dobble hanno sempre esattamente un simbolo in comune? La risposta sta nei piani proiettivi finiti."
+date: "2026-04-12"
+abstract: "Due carte qualsiasi condividono sempre esattamente un simbolo. Dietro questa regola semplicissima c'è la struttura di un piano proiettivo finito."
 section: "giochi"
-tags: ["combinatoria", "geometria proiettiva", "game design"]
+tags: ["combinatoria", "geometria", "game design", "dobble"]
 lang: "it"
 progetto: "dobble"
+source: "Seminario Chi ha rubato le carte di Dobble? — Fuori Orario Unimi, 2020; The Mathematics of Dobble"
 ---
 
-## La proprietà che fa il gioco
+Dobble ha una sola regola che conta: prese due carte qualsiasi del mazzo, esse condividono **sempre esattamente un simbolo**. Uno, mai zero, mai due. È questa proprietà — non la velocità, non i riflessi — a rendere il gioco *perfetto*. E non è un caso fortunato di stampa: è una struttura matematica precisa.
 
-Dobble ha una regola sola: due carte qualsiasi condividono esattamente *un* simbolo. Questa proprietà non è arbitraria: corrisponde alla definizione di un **piano proiettivo finito**.
+## La domanda giusta
 
-Un piano proiettivo di ordine $n$ ha:
-- $n^2 + n + 1$ punti
-- $n^2 + n + 1$ rette
-- ogni retta contiene $n + 1$ punti
-- per due punti passa esattamente una retta
-- due rette si intersecano in esattamente un punto
+Si può costruire un mazzo in cui ogni coppia di carte condivide esattamente un simbolo, usando lo stesso numero di simboli per carta? La risposta vive nella geometria, ma in una geometria spogliata di distanze e angoli: restano solo **punti** e **rette**, e una regola d'incidenza.
 
-## Il mazzo come piano
+In un **piano proiettivo finito di ordine $n$**:
 
-Pensa ogni simbolo come un **punto** e ogni carta come una **retta**. La regola "due rette si intersecano in un punto" è esattamente "due carte condividono un simbolo".
+- ogni retta contiene esattamente $n+1$ punti;
+- per ogni punto passano esattamente $n+1$ rette;
+- due rette qualsiasi si incontrano in **esattamente un punto**;
+- per due punti qualsiasi passa **esattamente una retta**;
+- ci sono in tutto $n^2 + n + 1$ punti e altrettante rette.
 
-Per un Dobble di ordine $7$: $7^2 + 7 + 1 = 57$ carte, $57$ simboli totali, $8$ simboli per carta. Il mazzo commerciale ne usa $55$.
+Il dizionario è immediato: **simbolo ↔ punto**, **carta ↔ retta**. La proprietà "due rette si incontrano in un punto solo" diventa, tradotta, "due carte condividono un simbolo solo".
+
+## I conti di Dobble
+
+Dobble usa **8 simboli per carta**: dunque $n+1 = 8$, cioè $n = 7$. Il piano proiettivo di ordine 7 ha
+
+$$ n^2 + n + 1 = 49 + 7 + 1 = 57 $$
+
+punti, e quindi 57 carte teoriche con 57 simboli. Il mazzo commerciale ne contiene 55: due carte mancano all'appello — da cui il titolo del seminario, *Chi ha rubato le carte di Dobble?*. La struttura, però, resta intatta: bastano le incidenze del piano proiettivo per garantire la regola del gioco.
+
+## Perché funziona solo per certi numeri
+
+Non per ogni $n$ esiste un piano proiettivo. Ne esistono certamente quando $n$ è la potenza di un primo (e Dobble sfrutta $7$, che è primo). Per altri valori la questione è sottile e, in alcuni casi, ancora aperta. Qui il gioco da tavolo diventa una finestra su un problema serio di combinatoria: la regola elementare che diverte un bambino è la punta visibile di una struttura che la matematica non ha finito di esplorare.
 
 > Un gioco perfetto non è un gioco senza regole. È un gioco le cui regole hanno una struttura.
-
-## Dove fallisce
-
-I piani proiettivi finiti esistono per ogni ordine $n$ potenza di primo. Per $n=6$ non esistono (Bruck-Ryser, Lam). È un risultato profondo che mostra quanto i giochi vivano dentro la matematica.
-
-→ Vedi anche il progetto correlato [Dobble](/lavoro/dobble).

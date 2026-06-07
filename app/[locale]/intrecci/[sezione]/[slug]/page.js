@@ -43,6 +43,9 @@ export default async function ArticlePage({ params: { locale, sezione, slug } })
   const prefix = `/${locale}`;
   const { prev, next } = getAdjacentArticles(sezione, slug, { locale });
   const relatedProject = article.progetto ? getProject(article.progetto, { locale }) : null;
+  const relatedArticle = article.relatedArticle
+    ? getArticle(article.relatedArticle.section, article.relatedArticle.slug, { locale })
+    : null;
 
   return (
     <article className={styles.wrap}>
@@ -71,6 +74,16 @@ export default async function ArticlePage({ params: { locale, sezione, slug } })
         <Link href={`${prefix}/lavoro/${relatedProject.slug}`} className={styles.relatedProject}>
           <span className={styles.relatedLabel}>{t('article.relatedProject')} →</span>
           <span className={styles.relatedTitle}>{relatedProject.title}</span>
+        </Link>
+      )}
+
+      {relatedArticle && (
+        <Link
+          href={`${prefix}/intrecci/${relatedArticle.section}/${relatedArticle.slug}`}
+          className={styles.relatedProject}
+        >
+          <span className={styles.relatedLabel}>{t('article.readAlso')} →</span>
+          <span className={styles.relatedTitle}>{relatedArticle.title}</span>
         </Link>
       )}
 
