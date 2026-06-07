@@ -27,16 +27,12 @@ export default async function ContattiPage({ params: { locale } }) {
 
       <div className={styles.contactInfo}>
         <div className={styles.infoRow}>
-          <span className={styles.infoLabel}>Email</span>
-          <a href="mailto:hello@fildor.example">hello@fildor.example</a>
-        </div>
-        <div className={styles.infoRow}>
           <span className={styles.infoLabel}>LinkedIn</span>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">linkedin.com</a>
+          <a href="https://it.linkedin.com/in/marco-cattazzo-176a211a3" target="_blank" rel="noreferrer">linkedin.com/in/marco-cattazzo</a>
         </div>
         <div className={styles.infoRow}>
           <span className={styles.infoLabel}>GitHub</span>
-          <a href="https://github.com" target="_blank" rel="noreferrer">github.com</a>
+          <a href="https://github.com/marcocattazzo" target="_blank" rel="noreferrer">github.com/marcocattazzo</a>
         </div>
       </div>
     </div>

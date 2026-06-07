@@ -28,9 +28,9 @@ const skills = [
 
 const formazione = [
   { date: '—', title: 'Liceo Scientifico "Majorana"', place: 'Diploma maturità scientifica', desc: '' },
-  { date: '2017 — 2020', title: 'Laurea triennale in Matematica', place: 'Università degli Studi di Milano', desc: 'Algebra, analisi, geometria, fondamenti.' },
-  { date: '2020 — 2023', title: 'Laurea magistrale in Matematica', place: 'Università degli Studi di Milano', desc: 'Indirizzo logico-algebrico. Tesi su strutture combinatorie e verifica formale.' },
-  { date: '2023', title: 'INDAM — Idoneità borsa', place: 'Istituto Nazionale di Alta Matematica', desc: 'Selezione nazionale per il dottorato in matematica.' },
+  { date: '2018 — 2024', title: 'Laurea triennale in Matematica', place: 'Università degli Studi di Milano', desc: 'Algebra, analisi, geometria, fondamenti.' },
+  { date: '2024 — attuale', title: 'Laurea magistrale in Matematica · In corso', place: 'Università degli Studi di Milano', desc: 'Indirizzo logico-algebrico. Strutture combinatorie e verifica formale.' },
+  { date: '2018', title: 'INDAM — Idoneità borsa', place: 'Istituto Nazionale di Alta Matematica', desc: 'Idoneità a borsa di studio per l\'iscrizione al corso di laurea in Matematica.' },
   { date: '2016 — 2021', title: 'Scuola di Teologia per Laici', place: 'Decanato Seregno-Seveso', desc: 'Percorso pluriennale di formazione teologica sistematica.' },
   { date: '02/2025 — 09/2025', title: 'Esami di Liturgia 1 e 2 (12 CFU)', place: 'Facoltà Teologica dell\'Italia Settentrionale, Milano', desc: 'Approfondimento liturgico-sacramentale.' }
 ];
@@ -69,17 +69,17 @@ export default async function CurriculumPage({ params: { locale } }) {
         </div>
 
         <div className={styles.sideContacts}>
-          <a className={styles.sideContact} href="mailto:hello@fildor.example">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" stroke="currentColor" strokeWidth="1"/><path d="M3 7l9 6 9-6" stroke="currentColor" strokeWidth="1"/></svg>
-            hello@fildor.example
-          </a>
           <a className={styles.sideContact} href="https://github.com/marcocattazzo" target="_blank" rel="noreferrer">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1"/></svg>
             github.com/marcocattazzo
           </a>
-          <a className={styles.sideContact} href="https://linkedin.com" target="_blank" rel="noreferrer">
+          <a className={styles.sideContact} href="https://it.linkedin.com/in/marco-cattazzo-176a211a3" target="_blank" rel="noreferrer">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" stroke="currentColor" strokeWidth="1"/></svg>
             LinkedIn
+          </a>
+          <a className={styles.sideContact} href="https://instagram.com/marcocattazzo" target="_blank" rel="noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="1"/></svg>
+            Instagram
           </a>
         </div>
 
@@ -118,11 +118,11 @@ export default async function CurriculumPage({ params: { locale } }) {
           <h2 id="about-h" className={styles.blockTitle}>About</h2>
           <div className={styles.aboutGrid}>
             <p className={styles.aboutText}>
-              Matematico per formazione (Università degli Studi di Milano, magistrale logico-algebrica, idoneità INDAM), con un percorso parallelo in teologia, pastorale e liturgia (Scuola di Teologia del Decanato Seregno-Seveso; esami di Liturgia 1 e 2 alla FTIS). Lavoro su problemi che richiedono rigore — formali, organizzativi, formativi — con attenzione a cosa il modello *non* sta dicendo.
+              Matematico in formazione (Università degli Studi di Milano: triennale 2018–2024, magistrale logico-algebrica in corso; idoneità INDAM 2018), con un percorso parallelo in teologia, pastorale e liturgia (Scuola di Teologia del Decanato Seregno-Seveso 2016–2021; esami di Liturgia 1 e 2 alla FTIS 2025). Lavoro su problemi che richiedono rigore — formali, organizzativi, formativi — con attenzione a cosa il modello *non* sta dicendo.
             </p>
             <div className={styles.infoGrid}>
               <div><strong>Residenza</strong>Italia</div>
-              <div><strong>Email</strong>hello@fildor.example</div>
+              <div><strong>Contatto</strong><Link href={`${prefix}/contatti`} style={{ color: 'var(--gold-main)' }}>/contatti →</Link></div>
               <div><strong>GitHub</strong>marcocattazzo</div>
               <div><strong>Lingue</strong>IT · EN</div>
             </div>
