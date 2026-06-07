@@ -1,40 +1,166 @@
 ---
 title: "Dobble e la geometria combinatoria — come nasce un gioco perfetto"
-date: "2026-04-12"
-abstract: "Due carte qualsiasi condividono sempre esattamente un simbolo. Dietro questa regola semplicissima c'è la struttura di un piano proiettivo finito."
+date: "2026-05-15"
+abstract: "Le due carte mancanti dal mazzo di Dobble non sono state rubate: non sono mai state stampate. Dietro il gioco si nasconde la struttura di un piano proiettivo finito — e i mazzi completi sono esattamente i piani proiettivi."
 section: "giochi"
-tags: ["combinatoria", "geometria", "game design", "dobble"]
+tags: ["combinatoria", "geometria proiettiva", "game design", "piani proiettivi", "campi finiti"]
 lang: "it"
+source: "Seminario Fuori Orario, Università di Milano (15 maggio 2020)"
 progetto: "dobble"
-source: "Seminario Chi ha rubato le carte di Dobble? — Fuori Orario Unimi, 2020; The Mathematics of Dobble"
 ---
 
-Dobble ha una sola regola che conta: prese due carte qualsiasi del mazzo, esse condividono **sempre esattamente un simbolo**. Uno, mai zero, mai due. È questa proprietà — non la velocità, non i riflessi — a rendere il gioco *perfetto*. E non è un caso fortunato di stampa: è una struttura matematica precisa.
+Prendi un mazzo di *Dobble*, mescolalo, scopri due carte qualsiasi. C'è sempre uno e un solo simbolo in comune. Sempre. Lo provi una decina di volte e cominci a sospettare che non sia fortuna.
 
-## La domanda giusta
+Non lo è. È struttura. E come ogni struttura, nasconde una domanda: il mazzo che hai in mano è davvero tutto il mazzo possibile, o ne mancano dei pezzi? La scatola dice 55 carte. Tieni questo numero a mente — torneremo a chiederci dove sono finite le altre.
 
-Si può costruire un mazzo in cui ogni coppia di carte condivide esattamente un simbolo, usando lo stesso numero di simboli per carta? La risposta vive nella geometria, ma in una geometria spogliata di distanze e angoli: restano solo **punti** e **rette**, e una regola d'incidenza.
+## Conosciamo il gioco
 
-In un **piano proiettivo finito di ordine $n$**:
+*Dobble* (o *Spot It!* nei paesi anglofoni) è un mazzo di carte rotonde. Su ciascuna ci sono dei simboli, e la regola del gioco è una sola: trova in fretta il simbolo che due carte hanno in comune. Vince chi lo vede per primo.
 
-- ogni retta contiene esattamente $n+1$ punti;
-- per ogni punto passano esattamente $n+1$ rette;
-- due rette qualsiasi si incontrano in **esattamente un punto**;
-- per due punti qualsiasi passa **esattamente una retta**;
-- ci sono in tutto $n^2 + n + 1$ punti e altrettante rette.
+![Il mazzo classico di Dobble: 55 carte, 57 simboli, 8 simboli per carta](/assets/articoli/dobble-geometria-combinatoria/mazzo-classico.jpg)
 
-Il dizionario è immediato: **simbolo ↔ punto**, **carta ↔ retta**. La proprietà "due rette si incontrano in un punto solo" diventa, tradotta, "due carte condividono un simbolo solo".
+Esistono varianti di taglia diversa — quella per bambini ha carte da sei simboli invece che da otto — ma la promessa non cambia mai.
 
-## I conti di Dobble
+![Una variante più piccola del gioco](/assets/articoli/dobble-geometria-combinatoria/mazzo-numeri.jpg)
 
-Dobble usa **8 simboli per carta**: dunque $n+1 = 8$, cioè $n = 7$. Il piano proiettivo di ordine 7 ha
+Il mazzo classico è fatto di **57 simboli** e **55 carte**, e ogni carta ne porta esattamente **8**. Sono numeri strani. Perché 57 simboli e non 56? Perché 55 carte e non 60? La risposta arriva solo se smettiamo di guardare le illustrazioni e cominciamo a guardare la regola.
 
-$$ n^2 + n + 1 = 49 + 7 + 1 = 57 $$
+## Sei assiomi per un mazzo
 
-punti, e quindi 57 carte teoriche con 57 simboli. Il mazzo commerciale ne contiene 55: due carte mancano all'appello — da cui il titolo del seminario, *Chi ha rubato le carte di Dobble?*. La struttura, però, resta intatta: bastano le incidenze del piano proiettivo per garantire la regola del gioco.
+Dimentichiamo i disegni. Un mazzo di *Dobble* è una coppia di insiemi — i **simboli** e le **carte** — dove ogni carta è un sottoinsieme di simboli. Perché il gioco funzioni servono sei condizioni.
 
-## Perché funziona solo per certi numeri
+- **D1.** Ogni carta ha uno e un solo simbolo in comune con ogni altra carta.
+- **D2.** Ogni carta ha lo stesso numero $s$ di simboli.
+- **D3.** Nessun simbolo appare più di una volta sulla stessa carta.
+- **D4.** Ogni carta è unica: non ci sono doppioni.
+- **D5.** Ogni simbolo compare su almeno una carta.
+- **D6.** Non esiste un simbolo comune a tutte le carte.
 
-Non per ogni $n$ esiste un piano proiettivo. Ne esistono certamente quando $n$ è la potenza di un primo (e Dobble sfrutta $7$, che è primo). Per altri valori la questione è sottile e, in alcuni casi, ancora aperta. Qui il gioco da tavolo diventa una finestra su un problema serio di combinatoria: la regola elementare che diverte un bambino è la punta visibile di una struttura che la matematica non ha finito di esplorare.
+![Due carte qualsiasi condividono sempre esattamente un simbolo — l'assioma D1](/assets/articoli/dobble-geometria-combinatoria/simbolo-comune.jpg)
 
-> Un gioco perfetto non è un gioco senza regole. È un gioco le cui regole hanno una struttura.
+D1 è il cuore del gioco: l'intersezione tra due carte non è mai vuota e non è mai doppia. D6, invece, sembra una pignoleria — e invece è ciò che separa un gioco vivo da un gioco morto.
+
+## Due mazzi che non divertono
+
+Per capire cosa rende speciale *Dobble*, conviene costruire male un mazzo e vedere cosa si rompe.
+
+**Primo modo sbagliato.** Metto su ogni carta lo stesso simbolo — diciamo un atomo — più qualche altra cosa. D1 è soddisfatto: due carte hanno sempre l'atomo in comune. Ma il gioco è finito prima di cominciare. La risposta è sempre la stessa, *Spot It!* diventa *Spot the Atom*.
+
+![Tutte le carte condividono lo stesso simbolo: il gioco muore](/assets/articoli/dobble-geometria-combinatoria/spot-the-atom.jpg)
+
+Ecco perché esiste D6. Vietare un simbolo onnipresente non è una raffinatezza formale: è la differenza tra un gioco e una formalità.
+
+**Secondo modo sbagliato.** Faccio l'opposto. Per ogni coppia di carte invento un simbolo nuovo, dedicato solo a loro due. D1 è di nuovo salvo, e questa volta il gioco è perfino interessante. Il problema è il prezzo.
+
+![Per ogni coppia di carte un simbolo dedicato: i conti esplodono](/assets/articoli/dobble-geometria-combinatoria/costruzione-ingenua.jpg)
+
+Con $n$ carte, ciascuna deve contenere un simbolo per ognuna delle altre $n-1$: dunque $n-1$ simboli per carta. E i simboli diversi necessari sono uno per coppia, cioè
+
+$$\binom{n}{2}=\frac{n(n-1)}{2}.$$
+
+Per arrivare a 55 carte servono $\binom{55}{2}=1485$ simboli distinti, e ogni carta ne porta 54. Una carta grande come un lenzuolo, e un esercito di illustratori. Funziona, ma è uno spreco.
+
+> Il problema, formulato bene, è questo: il maggior numero di carte possibile, con il minor numero di simboli per carta. Massima ricchezza combinatoria, minimo costo grafico.
+
+Cerchiamo l'efficienza. E l'efficienza, qui, ha un nome antico.
+
+## I coprotagonisti: i piani proiettivi
+
+Cambiamo dominio. Una **struttura di incidenza** è una terna $(\mathcal{P},\mathcal{L},I)$: un insieme di *punti* $\mathcal{P}$, un insieme di *rette* $\mathcal{L}$, e una relazione di incidenza $I\subseteq\mathcal{P}\times\mathcal{L}$ che dice quali punti stanno su quali rette.
+
+Un **piano proiettivo** è una struttura di incidenza che rispetta tre assiomi:
+
+- **P1.** Per ogni coppia di punti esiste un'unica retta che passa per entrambi.
+- **P2.** Per ogni coppia di rette esiste un unico punto che appartiene a entrambe.
+- **P3.** Esistono quattro punti tali che nessuna terna di essi sia allineata.
+
+P1 e P2 sono perfettamente simmetrici: scambiando le parole *punto* e *retta* si scambiano fra loro. P3 è una clausola di non-degenerazione — chiede che il piano sia "abbastanza grande" da non collassare in qualcosa di banale. È l'eco geometrica di D6.
+
+Il piano proiettivo reale $\mathbb{P}\mathbb{R}^2$ è l'esempio classico, ma a noi servono i piani **finiti**. Quelli costruiti a partire da un campo finito $\mathbb{F}_q$ si chiamano $\mathbb{PG}^2(\mathbb{F}_q)$, e sono effettivamente piani proiettivi.
+
+![Il piano di Fano, $\mathbb{PG}^2(\mathbb{F}_2)$: sette punti, sette rette](/assets/articoli/dobble-geometria-combinatoria/piano-di-fano.jpg)
+
+Il più piccolo, il **piano di Fano**, ha sette punti e sette rette: i punti sono i sottospazi di dimensione 1 di $\mathbb{F}_2^3$. Il conto vale in generale. Lo spazio $\mathbb{F}_q^3$ ha $q^3-1$ vettori non nulli; ogni retta vettoriale (sottospazio di dimensione 1) ne contiene $q-1$. I punti del piano sono dunque
+
+$$\frac{q^3-1}{q-1}=q^2+q+1.$$
+
+Le rette del piano sono i piani vettoriali di $\mathbb{F}_q^3$, e per dualità sono esattamente lo stesso numero: $q^2+q+1$. Tieni d'occhio questa formula. Sta per riapparire sulle carte.
+
+## Il ponte fra i due mondi
+
+Le somiglianze non sono più ignorabili. Mettiamo i due elenchi di assiomi uno accanto all'altro e chiediamoci se i piani proiettivi finiti *siano* mazzi di *Dobble*, leggendo i punti come simboli e le rette come carte.
+
+L'allineamento è quasi automatico:
+
+- **P2 corrisponde a D1.** Due rette si incontrano in un unico punto $\;\Longleftrightarrow\;$ due carte condividono un unico simbolo.
+- La finitezza forza **D3**: un punto può stare su una retta una volta sola.
+- L'esistenza e l'unicità in **P1** danno **D4** (niente carte doppie) e **D5** (nessun simbolo isolato).
+- E **P3 implica D6**: se esistesse un simbolo comune a tutte le carte, ogni terna di punti risulterebbe allineata, contraddicendo P3.
+
+Resta da capire D2 — che tutte le carte abbiano lo stesso numero di simboli. Non è un assioma dei piani proiettivi: è un *teorema*.
+
+> In un piano proiettivo ogni retta contiene lo stesso numero di punti, e questo numero coincide con il numero di rette per ogni punto. Se ogni retta ha $n+1$ punti, allora punti e rette sono entrambi $n^2+n+1$.
+
+La dimostrazione è una di quelle che si reggono su un disegno. Prendi una retta $\ell$ e un punto $P$ **fuori** da essa. A ogni punto $Q$ di $\ell$ associo la retta $PQ$: esiste ed è unica per P1. Viceversa, a ogni retta per $P$ associo la sua intersezione con $\ell$: esiste ed è unica per P2. È una biiezione.
+
+![Da un punto fuori dalla retta: una corrispondenza biunivoca tra i punti di $\ell$ e le rette per $P$](/assets/articoli/dobble-geometria-combinatoria/punto-fuori-retta.jpg)
+
+Quindi *ogni* retta ha tanti punti quante sono le rette per un punto esterno. Per concludere che tutte le rette hanno la stessa cardinalità basta osservare che, date due rette qualsiasi, per P3 esiste sempre un punto fuori da entrambe a fare da intermediario.
+
+![Da un punto sulla retta: le rette per $P$ contano i punti del piano](/assets/articoli/dobble-geometria-combinatoria/punto-su-retta.jpg)
+
+Chiamiamo $n$ l'**ordine** del piano. Ogni punto $P$ sta su $n+1$ rette, e ciascuna porta $n$ punti oltre a $P$: in totale $(n+1)\,n+1=n^2+n+1$ punti. Lo stesso conto, per dualità, vale per le rette. Ecco la nostra formula, e con essa **D2**.
+
+I piani proiettivi finiti sono dunque mazzi di *Dobble*. Sono anche **completi**? Cioè: massimali, impossibili da ampliare senza rompere le regole?
+
+Sì. In un mazzo dove ogni carta ha $s$ simboli, nessun simbolo può comparire più di $s$ volte — un breve ragionamento per assurdo, di nuovo via D6, lo mostra. In un piano di ordine $n$ ogni simbolo compare esattamente $n+1=s$ volte: il massimo consentito. Non si può aggiungere nulla. Anzi, vale la caratterizzazione esatta:
+
+> Un mazzo di *Dobble* con $s$ simboli per carta è completo se e solo se ogni simbolo compare esattamente $s$ volte.
+
+E nell'altra direzione? **Ogni** mazzo di *Dobble* è un piano proiettivo? No. Prendi un mazzo completo e buttane via metà delle carte, eliminando i simboli rimasti orfani. Quello che resta è ancora un legittimo mazzo di *Dobble* — ma non è più completo, e quindi non è un piano. La differenza fra i due mondi è tutta qui: nella completezza.
+
+Mettendo insieme i pezzi otteniamo l'enunciato che cercavamo:
+
+$$(\mathcal{P},\mathcal{L},I)\;\cong\;(\{\text{simboli}\},\{\text{carte}\},\in)$$
+
+I mazzi di *Dobble* **completi** sono in corrispondenza biunivoca con i piani proiettivi finiti. Le due strutture sono la stessa cosa, viste da due lati.
+
+## Il verdetto sulle carte mancanti
+
+Torniamo alla scatola. Otto simboli per carta significano $s=n+1=8$, cioè ordine $n=7$. Un piano completo di ordine 7 ha
+
+$$7^2+7+1=57$$
+
+carte. Ma la scatola ne contiene 55.
+
+Le due carte mancanti non sono state rubate. Semplicemente non sono mai state stampate: il mazzo commerciale è un piano proiettivo di ordine 7 a cui mancano due rette. La struttura sottostante è $\mathbb{PG}^2(\mathbb{F}_7)$, e completarla è banale — bastano due carte in più.
+
+Sparlando di efficienza: la costruzione ingenua chiedeva 1485 simboli, 54 per carta, per fare 55 carte. Il piano proiettivo, con soli **57 simboli e 8 per carta**, ne produce 57 — due in più del necessario. Questa è l'ottimalità che cercavamo: il miglior uso possibile dei simboli a disposizione.
+
+E la seconda domanda iniziale — costruire un mazzo divertente di taglia arbitraria — ha ora una risposta elegante. Prendo il piano proiettivo completo di ordine appena sufficiente ed estraggo le carte che mi servono. I campi finiti esistono per ogni ordine $q=p^n$ potenza di primo: per quelle taglie il mazzo completo è sempre disponibile.
+
+## Dove la struttura si fa imprevedibile
+
+Sarebbe bello se a ogni taglia corrispondesse un solo mazzo. Non è così.
+
+![Piani proiettivi di ordine piccolo: quanti ne esistono](/assets/articoli/dobble-geometria-combinatoria/tabella-piani-ordine-piccolo.jpg)
+
+All'ordine 9 esistono **quattro** piani proiettivi diversi a meno di isomorfismo. Tradotto in carte: si possono costruire quattro mazzi di *Dobble* completi di 91 carte ($9^2+9+1$) che rispettano tutte le regole eppure non sono "lo stesso mazzo riordinato". La struttura comincia a ramificarsi.
+
+![Tavola di incidenza di un piano di ordine 9: 91 punti, 91 rette](/assets/articoli/dobble-geometria-combinatoria/tavola-incidenza-ordine-9.jpg)
+
+E all'ordine 10? Qui la struttura non si ramifica: si interrompe. **Non esiste** alcun piano proiettivo di ordine 10 — un risultato dimostrato nel 1989 con una delle più imponenti ricerche al calcolatore della storia della matematica. Conseguenza diretta: non potrà mai esistere un mazzo di *Dobble* con 111 carte e 11 simboli ciascuna. Per quanto tu ci provi, una delle sei regole cederà.
+
+## Punti, rette, e una simmetria nascosta
+
+C'è un ultimo regalo. Il duale di un piano proiettivo — quello ottenuto scambiando i ruoli di punti e rette — è ancora un piano proiettivo. Lo garantisce la simmetria fra P1 e P2.
+
+Sui mazzi di *Dobble* questo significa che la corrispondenza si può leggere in due modi. Posso vedere i simboli come punti e le carte come rette; oppure le carte come punti e i simboli che le *attraversano* come rette. E i piani $\mathbb{PG}^2(\mathbb{F}_q)$ sono **isomorfi al proprio duale**: guardare il mazzo dal lato dei simboli o dal lato delle carte restituisce la stessa figura.
+
+> Lo stesso oggetto regge due descrizioni opposte e non si lascia distinguere fra di esse. Non è la prima volta, in matematica, che la simmetria più profonda è quella che non si vede a colpo d'occhio.
+
+## Coda
+
+Avevamo cominciato con una domanda da detective: chi ha rubato le carte di *Dobble*? La risposta è che non c'è stato nessun furto. Le carte mancavano perché il mazzo è la traccia parziale di una figura più grande e più rigida — un piano proiettivo di ordine 7 — che esisteva già, completa, prima ancora che qualcuno la disegnasse.
+
+Resta la domanda che il gioco non pone e la matematica sì: quante delle cose che maneggiamo ogni giorno sono frammenti di strutture complete che non abbiamo ancora finito di guardare?
