@@ -1,43 +1,51 @@
 ---
-title: "NEWMA — AI per trascrizione di neumi gregoriani"
+title: "NEWMA — AI per la trascrizione di neumi gregoriani"
 slug: "newma"
-date: "2024-11-10"
+date: "2026-05-21"
 year: "2024"
 category: "Ricerca applicata · AI · Liturgia"
 abstract: "Sistema di trascrizione automatica della notazione neumatica gregoriana attraverso reti neurali. All'incrocio tra computer vision, paleografia musicale e liturgia."
-tags: ["AI", "computer vision", "neumi", "gregoriano", "ricerca"]
+tags: ["AI", "computer vision", "neumi", "gregoriano", "ricerca", "rito ambrosiano"]
 lang: "it"
+source: "Progetto NewMa — relazione tecnica + relazione qualitativa, 21 maggio 2026"
 pdfs:
-  - { label: "Relazione tecnica", file: "/assets/progetto_newma_relazione_tecnica.pdf" }
-  - { label: "Relazione qualitativa", file: "/assets/progetto_newma_relazione_qualitativa.pdf" }
+  - { label: "Relazione tecnica (PDF)", file: "/assets/progetto_newma_relazione_tecnica.pdf" }
+  - { label: "Presentazione per il lettore non tecnico (PDF)", file: "/assets/progetto_newma_relazione_qualitativa.pdf" }
+relatedArticle: { section: "pensieri", slug: "scarto-epistemologico" }
 ---
 
-## Problema
+## Il problema
 
-I manoscritti gregoriani contengono migliaia di pagine di notazione **neumatica** — un sistema musicale antico, ricco di varianti grafiche regionali, che precede di secoli la pentagramma moderno. Trascriverli a mano è lentissimo; sbagliarli vuol dire perdere informazione storica. NEWMA nasce per costruire una pipeline AI che li riconosca, li classifichi e li converta in notazione moderna senza fraintendere ciò che è ambiguo.
+Le edizioni di riferimento del canto della Chiesa ambrosiana — l'*Antiphonale Missarum Mediolanense* e il *Liber Vesperalis*, entrambe degli anni Trenta del Novecento — esistono oggi soltanto come scansioni fotografiche delle pagine originali.
 
-## Approccio
+> Si possono guardare, ma non modificare. Non si possono cercare per testo. Non si può ricomporre un repertorio o adattarlo a un nuovo sussidio liturgico se non ricopiando tutto a mano.
 
-Il sistema combina tre livelli:
+Il contenuto musicale esiste, di fatto, solo come immagine statica: non ricercabile, non ricomponibile, non riusabile.
 
-1. **Segmentazione** delle pagine manoscritte — separare neumi, testo latino sottostante, decorazioni.
-2. **Classificazione** dei singoli neumi via CNN, con attenzione alle famiglie grafiche regionali (Sangallese, Metense, Beneventana).
-3. **Trascrizione** in notazione moderna preservando le ambiguità: un neuma incerto resta tale nel risultato, non viene "indovinato".
+## L'approccio
 
-## Modellazione
+**NEWMA** è una pipeline di *Optical Music Recognition* pensata per la notazione neumatica quadrata. A partire dalla scansione di una pagina, ricostruisce una prima bozza del canto in formato **GABC** — lo standard testuale del progetto Gregorio — revisionabile in un editor visuale dedicato e ricompilabile in spartito stampabile.
 
-Il cuore tecnico è gestire l'**incertezza paleografica**. Un buon trascrittore umano sa quando lasciare una nota tra parentesi quadre; un sistema AI ingenuo no. NEWMA modella esplicitamente la confidenza per neuma e propaga l'incertezza nella resa finale, così il liturgista vede dove il sistema *si sta fidando troppo*.
+La pipeline si articola in tre passi:
 
-> Trascrivere un manoscritto non è solo leggerlo. È restituire intatto ciò che il manoscritto dice di non sapere.
+1. **La pagina viene "letta".** Un modulo individua autonomamente i tetragrammi (i righi musicali a quattro linee), osservando la pagina come un segnale verticale e cercando dove quel segnale somigli di più alla struttura di righe equispaziate.
+2. **I neumi vengono "riconosciuti".** All'interno di ogni tetragramma il sistema separa i neumi, distingue le forme (punctum, virga, rombus, quilisma, oriscus…) e i modificatori (mora, episema), e scarta gli elementi estranei al canto — capilettera miniati, sigilli decorativi, marginalia.
+3. **La trascrizione viene rivista.** Il risultato è un file di testo che descrive l'intero canto e che può essere ricompilato in spartito in qualsiasi momento.
 
-## Risultati
+## La modellazione dell'incertezza
 
-- Pipeline funzionante su corpus di manoscritti campione (Sangallese, X-XI secolo).
-- Resa visiva dell'incertezza neuma-per-neuma.
-- Documentazione tecnica e qualitativa (vedi PDF sotto).
+Il riconoscimento è meno semplice di quanto sembri. La densità grafica e la prossimità fra neumi adiacenti rendono difficile la segmentazione; la stampa degli anni Trenta presenta variazioni tipografiche da edizione a edizione; la qualità delle scansioni non è uniforme. A questo si aggiungono i casi-limite del repertorio: note che escono dal tetragramma per intervalli ampi, pagine "sporche" di pixel, macchie d'inchiostro. Il sistema è progettato per *esibire* questi limiti, non per nasconderli.
 
-## Insight
+## I risultati
 
-L'incrocio tra AI e liturgia è una zona insolitamente fertile. La liturgia tratta da sempre il problema della tradizione fedele e del cambiamento legittimo. L'AI moderna tratta da sempre il problema della generalizzazione e dell'errore. Le due competenze, messe vicino, si interrogano a vicenda. NEWMA è una prima esplorazione di quello spazio.
+Su un campione di controllo di oltre **duemila neumi** mai visti durante l'addestramento, distribuiti su circa ottanta forme diverse, il sistema produce la trascrizione esattamente corretta in **poco più di tre quarti dei casi**. Negli altri, l'errore è di norma localizzato a una sola nota o a un solo modificatore: facilmente individuabile e correggibile nell'editor in pochi minuti per pagina.
 
-→ Articolo correlato: [Lo scarto epistemologico](/intrecci/pensieri/scarto-epistemologico).
+Il dataset costruito per NEWMA è, allo stato attuale, quasi un *unicum* per il rito ambrosiano stampato.
+
+## L'insight
+
+NEWMA non sostituisce l'esperto: lo libera dal foglio bianco. L'operatore non parte più dalla trascrizione ex novo, ma da una bozza già strutturata che richiede correzioni mirate.
+
+> Il canto ambrosiano è un dono che la Chiesa di Milano custodisce. I libri che lo tramandano devono restare tali nella loro forma originale. Ma perché quel canto continui a vivere nelle celebrazioni, occorre che il suo contenuto torni a essere maneggiabile, ripensabile, ricomponibile — in una parola, utilizzabile.
+
+È un piccolo passo: non sostituisce la conoscenza dell'uomo, le restituisce strumenti.
