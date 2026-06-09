@@ -1,0 +1,30 @@
+.cite {
+  font-family: var(--font-ui);
+  font-size: 0.62em;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  vertical-align: super;
+  margin-left: 1px;
+}
+
+.link {
+  color: var(--gold-main);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--gold-dim);
+  padding: 0 1px;
+  transition: color 150ms, border-color 150ms;
+}
+
+.link:hover {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+}
+
+.pages {
+  color: var(--text-muted);
+}
+
+.missing {
+  color: #d4a07a;
+  font-style: italic;
+}
