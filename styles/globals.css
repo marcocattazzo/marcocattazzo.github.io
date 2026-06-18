@@ -8,11 +8,11 @@
   --bg-raised:  #2C2C30;
   --bg-muted:   #484850;
 
-  /* Testo */
-  --text-primary:   #E2D8B8;
-  --text-secondary: #C8BFA0;
-  --text-muted:     #888894;
-  --text-dim:       #484850;
+  /* Testo — warm-neutral (meno giallo/oliva, più pulito) */
+  --text-primary:   #ECE8DE;
+  --text-secondary: #C2BCB0;
+  --text-muted:     #8C8C92;
+  --text-dim:       #4C4C54;
 
   /* Oro */
   --gold-main:  #BEA878;

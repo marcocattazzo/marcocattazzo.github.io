@@ -41,8 +41,7 @@ export default async function HomePage({ params: { locale } }) {
               <span className={styles.eyebrow}>{t('home.eyebrow')}</span>
               <h1 className={styles.title}>
                 {line1Head} <em>{line1Tail}</em>
-                <br />
-                {line2}
+                {line2 ? <><br />{line2}</> : null}
               </h1>
               <p className={styles.body}>{t('home.heroBody')}</p>
               <div className={styles.ctaRow}>
