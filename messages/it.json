@@ -58,6 +58,7 @@
     "downloadCV": "Scarica CV",
     "letsTalk": "Parliamo",
     "projectsLabel": "Progetti",
+    "documents": "Documenti",
     "ctaText": "Una conversazione sulla tua sfida — tecnica, organizzativa, formativa — è il modo più rapido per capire se posso essere utile."
   },
   "ambiti": {
@@ -104,7 +105,8 @@
     "next": "Successivo",
     "relatedProject": "Progetto correlato",
     "readAlso": "Leggi anche",
-    "comments": "Commenti"
+    "comments": "Commenti",
+    "langFallback": "Versione inglese non ancora disponibile — viene mostrata quella italiana."
   },
   "footer": {
     "tagline": "Uno spazio per pensare.",

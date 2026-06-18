@@ -53,13 +53,23 @@ export default async function ProjectPage({ params: { locale, slug } }) {
         )}
       </header>
 
+      {project._fallback && (
+        <p style={{
+          fontFamily: 'var(--font-ui)', fontSize: 12, letterSpacing: '0.04em',
+          color: 'var(--text-muted)', borderLeft: '2px solid var(--gold-dim)',
+          padding: '0.5rem 0 0.5rem 0.85rem', margin: '0 0 1.5rem'
+        }}>
+          {t('article.langFallback')}
+        </p>
+      )}
+
       <div className="prose">
         <MdxRenderer source={project.content} />
       </div>
 
       {project.pdfs?.length > 0 && (
         <div className={styles.pdfsBox}>
-          <span className={styles.pdfsLabel}>Documenti</span>
+          <span className={styles.pdfsLabel}>{t('lavoro.documents')}</span>
           {project.pdfs.map((pdf, i) => (
             <a key={i} href={pdf.file} target="_blank" rel="noreferrer" className={styles.pdfLink}>
               <span>{pdf.label}</span>

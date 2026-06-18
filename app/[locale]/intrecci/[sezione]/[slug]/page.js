@@ -58,6 +58,16 @@ export default async function ArticlePage({ params: { locale, sezione, slug } })
         {article.abstract && <p className={styles.abstract}>{article.abstract}</p>}
       </header>
 
+      {article._fallback && (
+        <p style={{
+          fontFamily: 'var(--font-ui)', fontSize: 12, letterSpacing: '0.04em',
+          color: 'var(--text-muted)', borderLeft: '2px solid var(--gold-dim)',
+          padding: '0.5rem 0 0.5rem 0.85rem', margin: '0 0 1.5rem'
+        }}>
+          {t('article.langFallback')}
+        </p>
+      )}
+
       <div className="prose">
         <MdxRenderer source={article.content} />
       </div>

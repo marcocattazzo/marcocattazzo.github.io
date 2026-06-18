@@ -58,6 +58,7 @@
     "downloadCV": "Download CV",
     "letsTalk": "Let's talk",
     "projectsLabel": "Projects",
+    "documents": "Documents",
     "ctaText": "A conversation about your challenge — technical, organizational, educational — is the quickest way to tell whether I can be useful."
   },
   "ambiti": {
@@ -104,7 +105,8 @@
     "next": "Next",
     "relatedProject": "Related project",
     "readAlso": "Read also",
-    "comments": "Comments"
+    "comments": "Comments",
+    "langFallback": "English version not yet available — showing the Italian one."
   },
   "footer": {
     "tagline": "A space to think.",
