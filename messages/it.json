@@ -56,7 +56,9 @@
     "bio": "Modello problemi complessi. Alcuni sono algoritmi di ottimizzazione, alcuni sono organizzazioni, alcuni sono sistemi di senso. Lo strumento cambia, il metodo no.",
     "talks": "Talks & Speaking",
     "downloadCV": "Scarica CV",
-    "letsTalk": "Parliamo"
+    "letsTalk": "Parliamo",
+    "projectsLabel": "Progetti",
+    "ctaText": "Una conversazione sulla tua sfida — tecnica, organizzativa, formativa — è il modo più rapido per capire se posso essere utile."
   },
   "ambiti": {
     "matematica": "Matematica studiata",

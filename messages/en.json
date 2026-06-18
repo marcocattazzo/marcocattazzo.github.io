@@ -56,7 +56,9 @@
     "bio": "I model complex problems. Some are optimization algorithms, some are organizations, some are systems of meaning. The tool changes, the method does not.",
     "talks": "Talks & Speaking",
     "downloadCV": "Download CV",
-    "letsTalk": "Let's talk"
+    "letsTalk": "Let's talk",
+    "projectsLabel": "Projects",
+    "ctaText": "A conversation about your challenge — technical, organizational, educational — is the quickest way to tell whether I can be useful."
   },
   "ambiti": {
     "matematica": "Mathematics studied",

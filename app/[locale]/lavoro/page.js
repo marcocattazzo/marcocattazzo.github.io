@@ -30,7 +30,7 @@ export default async function LavoroPage({ params: { locale } }) {
         </header>
 
         <section aria-labelledby="projects-heading">
-          <span id="projects-heading" className="label">Progetti</span>
+          <span id="projects-heading" className="label">{t('lavoro.projectsLabel')}</span>
           <div className={styles.grid}>
             {projects.map((p) => (
               <ProjectCard key={p.slug} project={p} locale={locale} />
@@ -54,9 +54,7 @@ export default async function LavoroPage({ params: { locale } }) {
         </section>
 
         <div className={styles.cta}>
-          <p className={styles.ctaText}>
-            Una conversazione sulla tua sfida — tecnica, organizzativa, formativa — è il modo più rapido per capire se posso essere utile.
-          </p>
+          <p className={styles.ctaText}>{t('lavoro.ctaText')}</p>
           <div className={styles.ctaRow}>
             <Link href={`${prefix}/contatti`} className="btn-primary">
               {t('lavoro.letsTalk')} →
