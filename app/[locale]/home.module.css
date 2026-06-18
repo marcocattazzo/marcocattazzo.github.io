@@ -42,10 +42,10 @@
 .title {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: clamp(52px, 9vw, 96px);
-  line-height: 1.02;
+  font-size: clamp(38px, 5.5vw, 62px);
+  line-height: 1.06;
   color: var(--text-primary);
-  letter-spacing: 0.005em;
+  letter-spacing: -0.005em;
 }
 
 .title em {
