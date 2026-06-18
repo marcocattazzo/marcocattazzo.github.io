@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import SectionGrid from '../../components/SectionGrid';
 import HeroAnimation from '../../components/HeroAnimation';
-import HeroThread from '../../components/HeroThread';
+import ThreadBackground from '../../components/ThreadBackground';
+import HomeHeroLogo from '../../components/HomeHeroLogo';
 import { getAllArticles } from '../../lib/mdx';
 import styles from './home.module.css';
 
@@ -31,14 +32,12 @@ export default async function HomePage({ params: { locale } }) {
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.heroBg} aria-hidden />
+        <ThreadBackground />
         <div className={styles.heroOverlay} aria-hidden />
         <div className="container">
           <HeroAnimation>
             <div className={styles.heroInner}>
-              <div className={styles.threadSvg}>
-                <HeroThread />
-              </div>
+              <HomeHeroLogo />
               <span className={styles.eyebrow}>{t('home.eyebrow')}</span>
               <h1 className={styles.title}>
                 {line1Head} <em>{line1Tail}</em>
