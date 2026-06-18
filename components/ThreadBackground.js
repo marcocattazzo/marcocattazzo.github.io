@@ -1,5 +1,3 @@
-'use client';
-
 // Sfondo animato: fili dorati sottili che ondeggiano lentamente.
 // In palette (oro su fondo profondo), leggero, CSS-only (nessun rAF),
 // rispetta prefers-reduced-motion. Sostituisce le foto di sfondo.
