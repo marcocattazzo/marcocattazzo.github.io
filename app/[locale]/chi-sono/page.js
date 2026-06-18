@@ -130,6 +130,16 @@ export default async function ChiSonoPage({ params: { locale } }) {
         <section id="intro" className={styles.section} style={{ marginTop: 0 }}>
           <h1 className={styles.title}>{t('chiSono.title')}</h1>
           <p className={styles.bio}>{t('chiSono.bio')}</p>
+
+          <div className={styles.cvBlock}>
+            <p className={styles.cvBlockText}>{t('chiSono.cvLinkBlock')}</p>
+            <Link href={`${prefix}/curriculum`} className={styles.cvBlockCta}>
+              {t('chiSono.cvLinkCta')}
+            </Link>
+            <p className={styles.cvEuropass}>
+              {L(europassLabel).text} <a href="/assets/curriculum.pdf" target="_blank" rel="noreferrer">{L(europassLabel).link}</a>
+            </p>
+          </div>
         </section>
 
         <section id="matematica" className={styles.section}>
@@ -182,16 +192,6 @@ export default async function ChiSonoPage({ params: { locale } }) {
           <Link href={`${prefix}/chi-sono/grafica`} className={styles.detailCta}>
             {t('ambiti.grafica')} — {t('ambiti.detailLink')}
           </Link>
-
-          <div className={styles.cvBlock}>
-            <p className={styles.cvBlockText}>{t('chiSono.cvLinkBlock')}</p>
-            <Link href={`${prefix}/curriculum`} className={styles.cvBlockCta}>
-              {t('chiSono.cvLinkCta')}
-            </Link>
-            <p className={styles.cvEuropass}>
-              {L(europassLabel).text} <a href="/assets/curriculum.pdf" target="_blank" rel="noreferrer">{L(europassLabel).link}</a>
-            </p>
-          </div>
         </section>
       </main>
     </div>

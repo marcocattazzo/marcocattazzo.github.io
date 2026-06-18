@@ -20,7 +20,6 @@ export default async function Footer({ locale }) {
 
           <nav className={styles.navLinks} aria-label="Footer">
             <Link href={`${prefix}/lavoro`}>{t('nav.lavoro')}</Link>
-            <Link href={`${prefix}/intrecci/grafica`}>{t('sections.grafica')}</Link>
             <Link href={`${prefix}/chi-sono`}>{t('nav.chiSono')}</Link>
             <Link href={`${prefix}/contatti`}>{t('nav.contatti')}</Link>
             <Link href={`${prefix}/cerca`}>{t('nav.cerca')}</Link>

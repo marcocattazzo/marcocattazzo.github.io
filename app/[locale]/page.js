@@ -48,16 +48,16 @@ export default async function HomePage({ params: { locale } }) {
                 <Link href={`${prefix}/chi-sono`} className={styles.ctaPrimary}>
                   {t('home.ctaPrimary')} →
                 </Link>
-                <Link href={`${prefix}/intrecci/matematica`} className={styles.ctaSecondary}>
-                  {t('home.ctaSecondary')} →
-                </Link>
+                <a href="#intrecci" className={styles.ctaSecondary}>
+                  {t('home.ctaSecondary')} ↓
+                </a>
               </div>
             </div>
           </HeroAnimation>
         </div>
       </section>
 
-      <section className={styles.intrecci} aria-labelledby="threads-heading">
+      <section id="intrecci" className={styles.intrecci} aria-labelledby="threads-heading">
         <div className="container">
           <h2 id="threads-heading" className={styles.intrecciIntro}>
             {t('home.intrecciIntro')}
