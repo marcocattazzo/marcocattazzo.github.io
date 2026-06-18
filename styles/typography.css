@@ -51,11 +51,15 @@ em, i {
 .prose h2 {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--gold-main);
+  font-weight: 500;
 }
 
 .prose h3 {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
+  color: var(--gold-main);
+  font-style: italic;
 }
 
 .prose blockquote {
