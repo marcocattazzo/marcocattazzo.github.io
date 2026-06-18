@@ -10,29 +10,12 @@ lang: "it"
 relatedArticle: { section: "giochi", slug: "dobble-geometria-combinatoria" }
 ---
 
-## Problema
+## In breve
 
-Dobble è un gioco con una regola elegantissima: due carte qualsiasi condividono esattamente *un* simbolo. Il problema posto: dimostrare che questa proprietà coincide con la definizione di piano proiettivo finito, e implementare un generatore di mazzi parametrico.
+Dobble ha una sola regola che conta: due carte qualsiasi condividono esattamente *un* simbolo. Quella proprietà non è un caso di stampa — coincide con la definizione di **piano proiettivo finito**. Da questa identità nasce un'analisi completa della struttura del mazzo (perché 57 simboli, perché 55 carte, perché certe taglie sono impossibili) e un generatore parametrico di mazzi.
 
-## Approccio
+> I giochi che resistono al tempo non sono casuali: vivono dentro strutture matematiche profonde. Capire la struttura non distrugge il gioco — lo rende un altro gioco.
 
-Il piano proiettivo di ordine $n$ esiste — per quanto sappiamo — per ogni $n$ potenza di primo. La costruzione standard usa il campo finito $\mathrm{GF}(n)$.
+La trattazione estesa, con dimostrazioni, illustrazioni e il verdetto sulle carte mancanti, è nell'articolo dedicato:
 
-Punti: classi di equivalenza in $\mathrm{GF}(n)^3 \setminus \{0\}$ sotto moltiplicazione per scalari.
-Rette: zeri di forme lineari $ax + by + cz = 0$.
-
-## Modellazione
-
-L'implementazione parte da $\mathrm{GF}(7)$ e produce $57$ carte con $8$ simboli ciascuna. Il mazzo commerciale di Dobble usa $55$ delle $57$ carte teoriche.
-
-## Risultati
-
-- Generatore in Python che produce mazzi di ordine $n$ arbitrario (per $n$ potenza di primo).
-- Visualizzazione del piano proiettivo come grafo bipartito carte-simboli.
-- Analisi del caso $n=6$: nessun piano proiettivo esiste (Bruck-Ryser-Lam).
-
-## Insight
-
-I giochi che resistono al tempo non sono casuali: vivono dentro strutture matematiche profonde. Capire la struttura non distrugge il gioco. Lo rende un altro gioco.
-
-→ Articolo correlato: [Dobble e la geometria combinatoria](/intrecci/giochi/dobble-geometria-combinatoria).
+→ **[Dobble e la geometria combinatoria — come nasce un gioco perfetto](/it/intrecci/giochi/dobble-geometria-combinatoria)**

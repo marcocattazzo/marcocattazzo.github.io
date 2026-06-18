@@ -40,10 +40,10 @@ const formazioneMat = [
     desc: 'Settimana intensiva di formazione su game theory applicata.'
   },
   {
-    date: '2020 →',
+    date: '2020 — 2022',
     title: 'Seminari "Fuori Orario" — Unimi',
     place: 'Speaker',
-    desc: 'Interventi su Dobble e geometria combinatoria, problem solving olimpico, altre tematiche.'
+    desc: 'Interventi su Dobble e geometria combinatoria (2020) e su teoria delle trecce e topologia algebrica (2022).'
   }
 ];
 
@@ -59,6 +59,12 @@ const formazioneTeo = [
     title: 'Esami di Liturgia 1 e 2',
     place: 'Facoltà Teologica dell\'Italia Settentrionale, Milano',
     desc: '12 CFU. Approfondimento liturgico-sacramentale.'
+  },
+  {
+    date: 'Giugno 2026',
+    title: 'Convegno "La Camera Alta" — liturgia, architettura e arte',
+    place: 'Una chiesa che pensa gli spazi',
+    desc: 'Partecipazione al primo convegno su liturgia, architettura e arte. Tra i relatori: Jean-Louis Ska, Giuliano Zanchi, Roberto Tagliaferri, Paolo Zermani, Enzo Bianchi, Michele De Lucchi.'
   }
 ];
 
@@ -67,7 +73,13 @@ const esperienzePastorali = [
     date: '2019 — 2028',
     title: 'Animazione e coordinamento comunitario',
     place: 'Comunità Pastorale San Giovanni Paolo II, Seregno',
-    desc: 'Consigliere e membro di Giunta del Consiglio di Comunità Pastorale (due mandati). Percorso di Dialogo Interreligioso con la Diocesi di Milano e il Centro Islamico di Saronno (2020–2021).'
+    desc: 'Consigliere e membro di Giunta del Consiglio di Comunità Pastorale (due mandati).'
+  },
+  {
+    date: '2020 — 2021',
+    title: 'Percorso di Dialogo Interreligioso',
+    place: 'Diocesi di Milano · Centro Islamico di Saronno',
+    desc: 'Cammino di dialogo interreligioso promosso dalla Diocesi di Milano insieme al Centro Islamico di Saronno.'
   },
   {
     date: '2021 — 2024',
@@ -83,9 +95,9 @@ const esperienzePastorali = [
   },
   {
     date: '2017 →',
-    title: 'Servizio comunitario e volontariato',
-    place: 'Oratorio · AVIS',
-    desc: 'Educatore in oratorio (2017 →). Donatore AVIS (2018 →).'
+    title: 'Educatore in oratorio',
+    place: 'Comunità Pastorale, Seregno',
+    desc: 'Animazione ed educazione nei percorsi giovanili dell\'oratorio.'
   }
 ];
 

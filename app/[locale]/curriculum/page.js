@@ -27,28 +27,29 @@ const skills = [
 ];
 
 const formazione = [
-  { date: '—', title: 'Liceo Scientifico "Majorana"', place: 'Diploma maturità scientifica', desc: '' },
+  { date: '—', title: 'Liceo Scientifico "Majorana"', place: 'Desio · Diploma di maturità scientifica', desc: '' },
   { date: '2018 — 2024', title: 'Laurea triennale in Matematica', place: 'Università degli Studi di Milano', desc: 'Algebra, analisi, geometria, fondamenti.' },
   { date: '2024 — attuale', title: 'Laurea magistrale in Matematica · In corso', place: 'Università degli Studi di Milano', desc: 'Indirizzo logico-algebrico. Strutture combinatorie e verifica formale.' },
   { date: '2018', title: 'INDAM — Idoneità borsa', place: 'Istituto Nazionale di Alta Matematica', desc: 'Idoneità a borsa di studio per l\'iscrizione al corso di laurea in Matematica.' },
   { date: '2016 — 2021', title: 'Scuola di Teologia per Laici', place: 'Decanato Seregno-Seveso', desc: 'Percorso pluriennale di formazione teologica sistematica.' },
-  { date: '02/2025 — 09/2025', title: 'Esami di Liturgia 1 e 2 (12 CFU)', place: 'Facoltà Teologica dell\'Italia Settentrionale, Milano', desc: 'Approfondimento liturgico-sacramentale.' }
+  { date: '02/2025 — 09/2025', title: 'Esami di Liturgia 1 e 2 (12 CFU)', place: 'Facoltà Teologica dell\'Italia Settentrionale, Milano', desc: 'Approfondimento liturgico-sacramentale.' },
+  { date: 'Giugno 2026', title: 'Convegno "La Camera Alta"', place: 'Liturgia, architettura e arte', desc: 'Partecipazione al primo convegno su liturgia, architettura e arte.' }
 ];
 
 const esperienza = [
   { date: '2024 →', title: 'NEWMA — AI per neumi gregoriani', place: 'Ricerca applicata', desc: 'Sistema di trascrizione automatica della notazione neumatica via reti neurali. Relazione tecnica e qualitativa.' },
-  { date: '2020 →', title: 'Speaker seminari "Fuori Orario"', place: 'Università degli Studi di Milano', desc: 'Interventi su Dobble e geometria combinatoria (2020) e altre tematiche.' },
-  { date: '2022 →', title: 'Tutoraggio Olimpiadi della matematica', place: 'Formazione studenti', desc: 'Preparazione per competizioni nazionali e internazionali.' },
+  { date: '2020 → 2022', title: 'Speaker seminari "Fuori Orario"', place: 'Università degli Studi di Milano', desc: 'Interventi su Dobble e geometria combinatoria (2020) e su teoria delle trecce e topologia algebrica (2022).' },
+  { date: '2022 →', title: 'Tutoraggio Olimpiadi della matematica', place: 'Liceo Scientifico "Majorana", Desio', desc: 'Preparazione di studenti alle Olimpiadi della matematica, con risultati eccellenti.' },
   { date: '2014 — 2018', title: 'Olimpiadi UMI — partecipante', place: 'Unione Matematica Italiana', desc: 'Qualificazioni distrettuali e nazionali.' },
   { date: '2017', title: 'Campus "Teoria dei giochi e reti neurali"', place: 'Marina di Massa', desc: 'Formazione intensiva.' },
-  { date: '—', title: 'Direzione progetto pastorale diocesano', place: 'Pastorale giovanile', desc: 'Coordinamento di un progetto sperimentale di accompagnamento giovanile.' }
+  { date: '2019 — 2028', title: 'Consigliere di Comunità Pastorale', place: 'Comunità Pastorale San Giovanni Paolo II, Seregno', desc: 'Consigliere e membro di Giunta (due mandati).' },
+  { date: '2021 — 2024', title: 'Tavoli ecclesiali CEL e Diocesi di Milano', place: 'Giovani e Vescovi · Consulta giovanile', desc: 'Tavolo Giovani e Vescovi (Commissione Regionale Riti, CEL); Consulta giovanile diocesana.' },
+  { date: '2024', title: 'Delegato CEI — 53° Congresso Eucaristico', place: 'Quito, Ecuador', desc: 'Laico delegato della Conferenza Episcopale Italiana.' }
 ];
 
 const talks = [
-  { title: 'Dobble e la geometria combinatoria', context: 'Fuori Orario — Unimi · 2020' },
-  { title: 'Fuori orario — pastorale giovanile e sinodalità', context: 'Convegno diocesano · 2024' },
-  { title: 'Exsultet — liturgia e comunità', context: 'Evento formativo · 2024' },
-  { title: 'Olimpiadi della matematica — problem solving strutturato', context: 'Didattica · 2023' }
+  { title: 'Chi ha rubato le carte di Dobble?', context: 'Fuori Orario — Unimi · 2020' },
+  { title: 'Topologia algebrica con le mani — corde e trecce', context: 'Fuori Orario — Unimi · 2022' }
 ];
 
 export default async function CurriculumPage({ params: { locale } }) {

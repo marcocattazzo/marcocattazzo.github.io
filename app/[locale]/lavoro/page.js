@@ -6,9 +6,8 @@ import { getAllProjects } from '../../../lib/mdx';
 import styles from './lavoro.module.css';
 
 const talks = [
-  { title: "Fuori orario — pastorale giovanile e sinodalità", context: "Convegno diocesano · 2024" },
-  { title: "Exsultet — liturgia e comunità", context: "Evento formativo · 2024" },
-  { title: "Olimpiadi della matematica — introduzione al problem solving strutturato", context: "Didattica · 2023" }
+  { title: "Chi ha rubato le carte di Dobble?", context: "Fuori Orario — Unimi · 2020" },
+  { title: "Topologia algebrica con le mani — corde e trecce", context: "Fuori Orario — Unimi · 2022" }
 ];
 
 export async function generateMetadata({ params: { locale } }) {
