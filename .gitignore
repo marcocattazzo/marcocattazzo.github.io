@@ -5,6 +5,7 @@ out/
 .env.local
 .DS_Store
 *.log
+*.tmp.*
 .vercel
 
 # CV con dati personali: tenuto in locale, NON pubblicato sul sito
