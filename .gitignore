@@ -6,3 +6,6 @@ out/
 .DS_Store
 *.log
 .vercel
+
+# CV con dati personali: tenuto in locale, NON pubblicato sul sito
+public/assets/curriculum.pdf

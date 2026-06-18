@@ -86,11 +86,6 @@ const leads = {
   }
 };
 
-const europassLabel = {
-  it: { text: 'CV completo formato Europass →', link: 'scarica PDF (IT)' },
-  en: { text: 'Full CV in Europass format →', link: 'download PDF (IT)' }
-};
-
 const sidebarLinks = [
   { id: 'intro', key: 'intro' },
   { id: 'matematica', key: 'formazioneMat' },
@@ -136,9 +131,6 @@ export default async function ChiSonoPage({ params: { locale } }) {
             <Link href={`${prefix}/curriculum`} className={styles.cvBlockCta}>
               {t('chiSono.cvLinkCta')}
             </Link>
-            <p className={styles.cvEuropass}>
-              {L(europassLabel).text} <a href="/assets/curriculum.pdf" target="_blank" rel="noreferrer">{L(europassLabel).link}</a>
-            </p>
           </div>
         </section>
 
