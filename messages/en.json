@@ -38,7 +38,16 @@
   "sectionAnchors": {
     "articoli": "Articles",
     "note": "Notes",
-    "risorse": "Resources"
+    "risorse": "Resources",
+    "portfolio": "Portfolio"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "intro": "A few works, and the concept that guided the choices.",
+    "year": "Year",
+    "context": "Context",
+    "role": "Role",
+    "tools": "Tools"
   },
   "home": {
     "eyebrow": "Marco Cattazzo",
@@ -62,26 +71,29 @@
     "ctaText": "A conversation about your challenge — technical, organizational, educational — is the quickest way to tell whether I can be useful."
   },
   "ambiti": {
-    "matematica": "Mathematics studied",
-    "teologia": "Theology studied",
-    "pastorale": "Pastoral experience",
+    "matematica": "Mathematical skills",
+    "teologia": "Theological training",
+    "rappresentanza": "Representation and roles",
     "grafica": "Design practice",
+    "eyebrow": "About — detail",
+    "note": "Updated October 2026.",
     "intro": {
-      "matematica": "Everything I have lingered on, year by year. Topics, substructures, authors — the way a mathematician builds their own territory.",
-      "teologia": "Theological study paths, systematic and occasional: school of theology, liturgy exams, personal readings.",
-      "pastorale": "Communities, roles, contexts. Pastoral work as thought made practice.",
-      "grafica": "Tools, techniques, areas of graphic work — the grammar of the mark put into practice."
+      "matematica": "Organised by field and use, not by exam: for each area, where it is useful outside university.",
+      "teologia": "Six years of a school of theology for laypeople, Liturgy exams at the FTIS, and conferences on liturgical space.",
+      "rappresentanza": "Elected and appointed roles, from school to a national delegation. The common thread: getting heterogeneous groups to work together and reach shared decisions.",
+      "grafica": "Projects, tools and areas of graphic work — the grammar of the mark put into practice."
     },
     "detailLink": "Detail page →",
     "backToChiSono": "← Back to About"
   },
   "chiSono": {
     "title": "About",
-    "bio": "I study systems — formal, human, linguistic. My background is in theoretical mathematics, with a parallel path through theology, pastoral work, and philosophy of language. I don't see them as separate worlds. The golden thread connects them.",
+    "bio": "I study systems — formal, human, linguistic. My background is in mathematics, focused on logic, theoretical computer science and operations research; alongside it, I have studied theology and held representative roles. I don't see them as separate worlds. The golden thread connects them.",
     "intro": "Introduction",
     "formazioneMat": "Mathematical training",
     "formazioneTeo": "Theological training",
-    "esperienzePast": "Pastoral work",
+    "didattica": "Teaching",
+    "rappresentanza": "Representation and roles",
     "graficaDesign": "Design",
     "cvLinkBlock": "Want to see my full path as a curriculum?",
     "cvLinkCta": "Go to the Curriculum page →"

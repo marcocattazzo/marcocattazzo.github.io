@@ -2,7 +2,7 @@
 title: "NEWMA — AI per la trascrizione di neumi gregoriani"
 slug: "newma"
 date: "2026-05-21"
-year: "2024"
+year: "2026"
 category: "Ricerca applicata · AI · Liturgia"
 abstract: "Sistema di trascrizione automatica della notazione neumatica gregoriana attraverso reti neurali. All'incrocio tra computer vision, paleografia musicale e liturgia."
 tags: ["AI", "computer vision", "neumi", "gregoriano", "ricerca", "rito ambrosiano"]
@@ -38,7 +38,7 @@ Il riconoscimento è meno semplice di quanto sembri. La densità grafica e la pr
 
 ## I risultati
 
-Su un campione di controllo di oltre **duemila neumi** mai visti durante l'addestramento, distribuiti su circa ottanta forme diverse, il sistema produce la trascrizione esattamente corretta in **poco più di tre quarti dei casi**. Negli altri, l'errore è di norma localizzato a una sola nota o a un solo modificatore: facilmente individuabile e correggibile nell'editor in pochi minuti per pagina.
+Il dataset conta **2.508 neumi** annotati a mano, distribuiti su **92 classi**. Sui neumi del campione di controllo, mai visti durante l'addestramento, il modello (CNN + BiLSTM + CTC) produce la trascrizione esattamente corretta nel **77,1%** dei casi, con un tasso di errore per carattere (CER) del **16,1%**. Negli altri casi, l'errore è di norma localizzato a una sola nota o a un solo modificatore: facilmente individuabile e correggibile nell'editor in pochi minuti per pagina.
 
 Il dataset costruito per NEWMA è, allo stato attuale, quasi un *unicum* per il rito ambrosiano stampato.
 

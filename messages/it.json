@@ -38,7 +38,16 @@
   "sectionAnchors": {
     "articoli": "Articoli",
     "note": "Note",
-    "risorse": "Risorse"
+    "risorse": "Risorse",
+    "portfolio": "Portfolio"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "intro": "Alcuni lavori, e il concept che ha guidato le scelte.",
+    "year": "Anno",
+    "context": "Contesto",
+    "role": "Ruolo",
+    "tools": "Strumenti"
   },
   "home": {
     "eyebrow": "Marco Cattazzo",
@@ -62,26 +71,29 @@
     "ctaText": "Una conversazione sulla tua sfida — tecnica, organizzativa, formativa — è il modo più rapido per capire se posso essere utile."
   },
   "ambiti": {
-    "matematica": "Matematica studiata",
-    "teologia": "Teologia studiata",
-    "pastorale": "Esperienze pastorali",
+    "matematica": "Competenze matematiche",
+    "teologia": "Formazione teologica",
+    "rappresentanza": "Rappresentanza e incarichi",
     "grafica": "Pratica grafica",
+    "eyebrow": "Chi sono — dettaglio",
+    "note": "Aggiornato a ottobre 2026.",
     "intro": {
-      "matematica": "Tutto ciò su cui mi sono fermato, anno per anno. Argomenti, sottostrutture, autori — il modo in cui un matematico costruisce il proprio territorio.",
-      "teologia": "I percorsi di studio teologico, sistematici e occasionali: scuola di teologia, esami di liturgia, letture personali.",
-      "pastorale": "Comunità, ruoli, contesti. La pastorale come pensiero che si fa pratica.",
-      "grafica": "Strumenti, tecniche, ambiti del lavoro grafico — la grammatica del segno declinata in pratica."
+      "matematica": "Ordinate per ambito e per uso, non per esame: per ogni area, dove serve fuori dall'università.",
+      "teologia": "Sei anni di scuola di teologia per laici, gli esami di Liturgia alla FTIS e i convegni sullo spazio liturgico.",
+      "rappresentanza": "Incarichi elettivi e di nomina, dalla scuola alla delegazione nazionale. Il tratto comune: far lavorare insieme gruppi eterogenei e arrivare a decisioni condivise.",
+      "grafica": "Progetti, strumenti e ambiti del lavoro grafico — la grammatica del segno messa in pratica."
     },
     "detailLink": "Pagina dettagliata →",
     "backToChiSono": "← Torna a Chi sono"
   },
   "chiSono": {
     "title": "Chi sono",
-    "bio": "Studio sistemi — formali, umani, linguistici. Ho una formazione in matematica teorica e un percorso parallelo in teologia, pastorale e filosofia del linguaggio. Non li considero mondi separati. Il filo d'oro li unisce.",
+    "bio": "Studio sistemi — formali, umani, linguistici. Mi sono formato in matematica, con un focus su logica, informatica teorica e ricerca operativa, e in parallelo ho studiato teologia e ricoperto incarichi di rappresentanza. Non li considero mondi separati. Il filo d'oro li unisce.",
     "intro": "Introduzione",
     "formazioneMat": "Formazione matematica",
     "formazioneTeo": "Formazione teologica",
-    "esperienzePast": "Esperienze pastorali",
+    "didattica": "Insegnamento",
+    "rappresentanza": "Rappresentanza e incarichi",
     "graficaDesign": "Grafica e design",
     "cvLinkBlock": "Vuoi vedere il mio percorso completo in formato curriculum?",
     "cvLinkCta": "Vai alla pagina Curriculum →"

@@ -9,88 +9,116 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 // Contenuti localizzati: { it: [...], en: [...] }. Si seleziona per locale.
+// Fonte: archivio "Core_Carriera" (ottobre 2026). Per la laurea si indica solo
+// l'anno di conclusione della triennale e "in corso" per la magistrale.
 const formazioneMat = {
   it: [
-    { date: '2018 — 2024', title: 'Laurea triennale in Matematica', place: 'Università degli Studi di Milano', desc: 'Algebra, analisi, geometria, fondamenti.' },
-    { date: '2024 — attuale', title: 'Laurea magistrale in Matematica · In corso', place: 'Università degli Studi di Milano', desc: 'Indirizzo logico-algebrico. Lavoro su strutture combinatorie e verifica formale.' },
-    { date: '2018', title: 'INDAM — Idoneità alla borsa di studio', place: 'Istituto Nazionale di Alta Matematica', desc: 'Idoneità a borsa di studio per l\'iscrizione al corso di laurea in Matematica.' },
-    { date: '2014 — 2018', title: 'Olimpiadi della Matematica UMI', place: 'Unione Matematica Italiana', desc: 'Qualificazioni distrettuali e nazionali.' },
-    { date: '2017', title: 'Campus "Teoria dei giochi e reti neurali"', place: 'Marina di Massa', desc: 'Settimana intensiva di formazione su game theory applicata.' },
-    { date: '2020 — 2022', title: 'Seminari "Fuori Orario" — Unimi', place: 'Speaker', desc: 'Interventi su Dobble e geometria combinatoria (2020) e su teoria delle trecce e topologia algebrica (2022).' }
+    { date: 'In corso', title: 'Laurea magistrale in Matematica', place: 'Università degli Studi di Milano', desc: 'Logica, informatica teorica, ricerca operativa.' },
+    { date: '2024', title: 'Laurea triennale in Matematica', place: 'Università degli Studi di Milano', desc: 'Algebra, geometria, analisi, probabilità, fisica matematica.' },
+    { date: '2021 · 2022', title: 'Progetti internazionali 4EU+', place: 'Charles University, Praga', desc: '«Isoperimetric Inequality» (2021); «The Mathematics of Letters from Whitechapel» (2022), con un team di sei studenti da Italia, Repubblica Ceca e Polonia.' },
+    { date: '2018', title: 'Idoneità INdAM', place: 'Istituto Nazionale di Alta Matematica', desc: 'Idoneità alle borse di studio per l\'iscrizione al corso di laurea in Matematica.' },
+    { date: '2017 · 2018', title: 'Olimpiadi della Matematica', place: 'Unione Matematica Italiana', desc: 'Finale nazionale individuale (2017) e a squadre (2018), Cesenatico.' },
+    { date: '2017', title: 'Campus «Teoria dei giochi e reti neurali»', place: 'Scuola Lagrange, Marina di Massa', desc: 'Prima rete neurale, in MATLAB, addestrata con un algoritmo genetico.' }
   ],
   en: [
-    { date: '2018 — 2024', title: 'Bachelor\'s degree in Mathematics', place: 'University of Milan', desc: 'Algebra, analysis, geometry, foundations.' },
-    { date: '2024 — present', title: 'Master\'s degree in Mathematics · Ongoing', place: 'University of Milan', desc: 'Logic-algebra track. Working on combinatorial structures and formal verification.' },
-    { date: '2018', title: 'INDAM — Scholarship eligibility', place: 'National Institute of Higher Mathematics', desc: 'Eligibility for a scholarship toward enrolment in the Mathematics degree.' },
-    { date: '2014 — 2018', title: 'Italian Mathematical Olympiad (UMI)', place: 'Italian Mathematical Union', desc: 'District and national qualifications.' },
-    { date: '2017', title: 'Campus "Game theory and neural networks"', place: 'Marina di Massa', desc: 'Intensive week of training in applied game theory.' },
-    { date: '2020 — 2022', title: 'Seminars "Fuori Orario" — Unimi', place: 'Speaker', desc: 'Talks on Dobble and combinatorial geometry (2020) and on braid theory and algebraic topology (2022).' }
+    { date: 'Ongoing', title: 'Master\'s degree in Mathematics', place: 'University of Milan', desc: 'Logic, theoretical computer science, operations research.' },
+    { date: '2024', title: 'Bachelor\'s degree in Mathematics', place: 'University of Milan', desc: 'Algebra, geometry, analysis, probability, mathematical physics.' },
+    { date: '2021 · 2022', title: '4EU+ international projects', place: 'Charles University, Prague', desc: '"Isoperimetric Inequality" (2021); "The Mathematics of Letters from Whitechapel" (2022), with a team of six students from Italy, the Czech Republic and Poland.' },
+    { date: '2018', title: 'INdAM eligibility', place: 'National Institute of Higher Mathematics', desc: 'Eligibility for the scholarships reserved to students enrolling in Mathematics.' },
+    { date: '2017 · 2018', title: 'Italian Mathematical Olympiad', place: 'Italian Mathematical Union', desc: 'National final, individual (2017) and team (2018), Cesenatico.' },
+    { date: '2017', title: 'Campus "Game theory and neural networks"', place: 'Lagrange School, Marina di Massa', desc: 'A first neural network, in MATLAB, trained with a genetic algorithm.' }
+  ]
+};
+
+const didattica = {
+  it: [
+    { date: 'Dal 2018', title: 'Allenatore delle Olimpiadi della Matematica', place: 'Liceo Scientifico e Classico «E. Majorana», Desio', desc: 'Squadre in finale nazionale nel 2019, 2020 e 2023 e in semifinale nel 2022, 2024, 2025 e 2026; studenti in finale individuale nel 2019, 2020 e 2022. Co-progettazione del percorso su tre livelli; dal 2026/27 un corso unico in peer education.' },
+    { date: '2021 — 2022', title: 'Docente di matematica e fisica', place: 'Collegio Villoresi, Monza', desc: 'Classi con molti studenti con DSA; didattica a distanza per l\'istruzione domiciliare. Corso di preparazione al SAT (2023).' },
+    { date: '2024', title: 'Corsi di recupero di matematica', place: 'Liceo «E. Majorana», Desio', desc: '' },
+    { date: '2020 · 2022', title: 'Seminari «Fuori Orario»', place: 'Università degli Studi di Milano', desc: '«Chi ha rubato le carte di Dobble?» (2020); «Topologia algebrica con le mani — corde e trecce», per studenti delle superiori (2022).' },
+    { date: 'In corso', title: 'Lezioni private', place: 'Matematica e fisica', desc: 'Scuola superiore e università; preparazione ai test di ammissione di Normale, Sant\'Anna e Galileiana.' }
+  ],
+  en: [
+    { date: 'Since 2018', title: 'Mathematical Olympiad coach', place: 'Liceo Scientifico e Classico "E. Majorana", Desio', desc: 'Teams in the national final in 2019, 2020 and 2023 and in the semifinal in 2022, 2024, 2025 and 2026; students in the individual final in 2019, 2020 and 2022. Co-designed the three-tier programme; from 2026/27 a single peer-education course.' },
+    { date: '2021 — 2022', title: 'Mathematics and physics teacher', place: 'Collegio Villoresi, Monza', desc: 'Classes with many students with learning disorders; remote teaching for home-schooled students. SAT preparation course (2023).' },
+    { date: '2024', title: 'Mathematics remedial courses', place: 'Liceo "E. Majorana", Desio', desc: '' },
+    { date: '2020 · 2022', title: '"Fuori Orario" seminars', place: 'University of Milan', desc: '"Who stole the Dobble cards?" (2020); "Algebraic topology by hand — strings and braids", for high-school students (2022).' },
+    { date: 'Ongoing', title: 'Private tutoring', place: 'Mathematics and physics', desc: 'High school and university; preparation for the admission exams of the Scuola Normale, Sant\'Anna and Galileiana.' }
   ]
 };
 
 const formazioneTeo = {
   it: [
-    { date: '2016 — 2021', title: 'Scuola di Teologia per Laici', place: 'Decanato Seregno-Seveso', desc: 'Percorso pluriennale di formazione teologica sistematica.' },
-    { date: '02/2025 — 09/2025', title: 'Esami di Liturgia 1 e 2', place: 'Facoltà Teologica dell\'Italia Settentrionale, Milano', desc: '12 CFU. Approfondimento liturgico-sacramentale.' },
-    { date: 'Giugno 2026', title: 'Convegno "La Camera Alta" — liturgia, architettura e arte', place: 'Una chiesa che pensa gli spazi', desc: 'Partecipazione al primo convegno su liturgia, architettura e arte. Tra i relatori: Jean-Louis Ska, Giuliano Zanchi, Roberto Tagliaferri, Paolo Zermani, Enzo Bianchi, Michele De Lucchi.' }
+    { date: '6 anni', title: 'Scuola di teologia per laici', place: 'Seminario Arcivescovile di Milano — Decanato di Seregno-Seveso', desc: 'Sacra Scrittura, antropologia teologica, teologia sistematica, ecclesiologia e sacramenti, teologia morale, anno monografico.' },
+    { date: '2025', title: 'Esami di Liturgia I e II', place: 'Facoltà Teologica dell\'Italia Settentrionale, Milano', desc: 'Storia e teologia della riforma liturgica conciliare; teologia dei sacramenti a partire dalla forma rituale.' },
+    { date: 'Giugno 2026', title: 'Convegno «La Camera Alta»', place: 'Monastero di Fonte Avellana', desc: 'Partecipazione al primo convegno su liturgia, architettura e arte, «Una Chiesa che pensa gli spazi». Tra i relatori: Jean-Louis Ska, Giuliano Zanchi, Roberto Tagliaferri, Paolo Zermani, Enzo Bianchi, Michele De Lucchi.' }
   ],
   en: [
-    { date: '2016 — 2021', title: 'School of Theology for Laypeople', place: 'Seregno-Seveso Deanery', desc: 'A multi-year path of systematic theological training.' },
-    { date: '02/2025 — 09/2025', title: 'Liturgy 1 and 2 exams', place: 'Theological Faculty of Northern Italy, Milan', desc: '12 ECTS. Liturgical-sacramental study.' },
-    { date: 'June 2026', title: 'Conference "La Camera Alta" — liturgy, architecture and art', place: 'A church that thinks its spaces', desc: 'Attendance at the first conference on liturgy, architecture and art. Speakers included Jean-Louis Ska, Giuliano Zanchi, Roberto Tagliaferri, Paolo Zermani, Enzo Bianchi, Michele De Lucchi.' }
+    { date: '6 years', title: 'School of theology for laypeople', place: 'Archiepiscopal Seminary of Milan — Seregno-Seveso Deanery', desc: 'Sacred Scripture, theological anthropology, systematic theology, ecclesiology and sacraments, moral theology, monographic year.' },
+    { date: '2025', title: 'Liturgy I and II exams', place: 'Theological Faculty of Northern Italy, Milan', desc: 'History and theology of the conciliar liturgical reform; theology of the sacraments starting from their ritual form.' },
+    { date: 'June 2026', title: 'Conference "La Camera Alta"', place: 'Monastery of Fonte Avellana', desc: 'Attended the first conference on liturgy, architecture and art, "A Church that thinks its spaces". Speakers included Jean-Louis Ska, Giuliano Zanchi, Roberto Tagliaferri, Paolo Zermani, Enzo Bianchi, Michele De Lucchi.' }
   ]
 };
 
-const esperienzePastorali = {
+const rappresentanza = {
   it: [
-    { date: '2019 — 2028', title: 'Animazione e coordinamento comunitario', place: 'Comunità Pastorale San Giovanni Paolo II, Seregno', desc: 'Consigliere e membro di Giunta del Consiglio di Comunità Pastorale (due mandati).' },
-    { date: '2020 — 2021', title: 'Percorso di Dialogo Interreligioso', place: 'Diocesi di Milano · Centro Islamico di Saronno', desc: 'Cammino di dialogo interreligioso promosso dalla Diocesi di Milano insieme al Centro Islamico di Saronno.' },
-    { date: '2021 — 2024', title: 'Tavoli ecclesiali regionali e diocesani', place: 'Conferenza Episcopale Lombarda · Diocesi di Milano', desc: 'Tavolo di Lavoro Giovani e Vescovi — Commissione Regionale Riti, CEL (2021–2024). Tavolo diocesano Movimenti e Associazioni — Consulta giovanile della Diocesi di Milano (2021).' },
-    { date: 'Settembre 2024', title: 'Delegato CEI — 53° Congresso Eucaristico Internazionale', place: 'Quito, Ecuador', desc: 'Laico delegato della Conferenza Episcopale Italiana al Congresso Eucaristico Internazionale.' },
-    { date: '2017 →', title: 'Educatore in oratorio', place: 'Comunità Pastorale, Seregno', desc: 'Animazione ed educazione nei percorsi giovanili dell\'oratorio.' }
+    { date: 'Settembre 2024', title: 'Delegato laico della Conferenza Episcopale Italiana', place: '53° Congresso Eucaristico Internazionale, Quito', desc: 'Uno dei 5 delegati nazionali, nella prima delegazione CEI aperta ai laici.' },
+    { date: '2021 — 2024', title: 'Commissione «Riti», tavolo «Giovani e Vescovi»', place: 'Conferenza Episcopale Lombarda', desc: 'Percorso sinodale con 200 giovani e 14 vescovi delle 10 diocesi lombarde.' },
+    { date: 'Dal 2019', title: 'Consigliere e membro di Giunta', place: 'Comunità Pastorale San Giovanni Paolo II, Seregno', desc: 'Due mandati. Una comunità di 6 parrocchie e circa 47.000 abitanti; un consiglio di oltre 40 membri.' },
+    { date: '2021 — 2023', title: 'Rappresentante degli studenti', place: 'Consiglio di Dipartimento di Matematica, Università degli Studi di Milano', desc: 'Due mandati consecutivi.' },
+    { date: '2017', title: 'Rappresentante degli studenti', place: 'Consiglio d\'Istituto, Liceo «E. Majorana», Desio', desc: '' }
   ],
   en: [
-    { date: '2019 — 2028', title: 'Community leadership and coordination', place: 'St. John Paul II Pastoral Community, Seregno', desc: 'Councillor and board member of the Pastoral Community Council (two terms).' },
-    { date: '2020 — 2021', title: 'Interreligious Dialogue programme', place: 'Archdiocese of Milan · Islamic Centre of Saronno', desc: 'A path of interreligious dialogue promoted by the Archdiocese of Milan together with the Islamic Centre of Saronno.' },
-    { date: '2021 — 2024', title: 'Regional and diocesan church working groups', place: 'Lombard Episcopal Conference · Archdiocese of Milan', desc: 'Youth and Bishops Working Group — Regional Rites Commission, CEL (2021–2024). Diocesan Movements and Associations group — Youth Council of the Archdiocese of Milan (2021).' },
-    { date: 'September 2024', title: 'CEI delegate — 53rd International Eucharistic Congress', place: 'Quito, Ecuador', desc: 'Lay delegate of the Italian Episcopal Conference at the International Eucharistic Congress.' },
-    { date: '2017 →', title: 'Youth educator (oratory)', place: 'Pastoral Community, Seregno', desc: 'Leadership and education in the oratory\'s youth programmes.' }
+    { date: 'September 2024', title: 'Lay delegate of the Italian Episcopal Conference', place: '53rd International Eucharistic Congress, Quito', desc: 'One of 5 national delegates, in the first CEI delegation open to lay members.' },
+    { date: '2021 — 2024', title: '"Rites" commission, "Youth and Bishops" programme', place: 'Lombard Episcopal Conference', desc: 'A synodal process with 200 young people and 14 bishops from the 10 Lombard dioceses.' },
+    { date: 'Since 2019', title: 'Council and executive board member', place: 'St. John Paul II Pastoral Community, Seregno', desc: 'Two terms. A community of 6 parishes and about 47,000 inhabitants; a council of more than 40 members.' },
+    { date: '2021 — 2023', title: 'Student representative', place: 'Department Council of Mathematics, University of Milan', desc: 'Two consecutive terms.' },
+    { date: '2017', title: 'Student representative', place: 'School Council, Liceo "E. Majorana", Desio', desc: '' }
   ]
 };
 
 const graficaDesign = {
   it: [
-    { date: '2015 — 2017', title: 'Direzione editoriale e immagine — MAJOtivù', place: 'Coordinamento redazione · Identità visiva', desc: 'Coordinatore della redazione MAJOtivù: durante la direzione l\'attività si è aggiudicata diversi bandi europei, per alcune decine di migliaia di euro, reinvestiti nel potenziamento della strumentazione. Identità visiva, composizione editoriale e branding come pratica continuativa. Strumenti: Figma, Illustrator, InDesign, After Effects, Cinema 4D.' }
+    { date: '2015 — 2017', title: 'Coordinatore della redazione — MAJOtivù', place: 'Web TV degli studenti, Liceo «E. Majorana», Desio', desc: 'Redazione di 10–30 studenti volontari: identità grafica per ogni format, video, dirette, podcast e stampa. Attrezzature acquistate con fondi europei PON.' },
+    { date: '2025', title: 'Comunicazione coordinata — Exsultet! 2025', place: 'Festival di musica liturgica, Varese', desc: 'Estensione dell\'identità visiva esistente ai nuovi materiali; trattamento delle immagini dei relatori.' },
+    { date: 'Dal 2017', title: 'Dirette, animazione e motion graphics', place: 'OBS Studio · Adobe After Effects · Adobe Animate', desc: 'Regia della diretta per l\'intitolazione dell\'Aula Magna «G. Ambrosoli» (2017); animazioni disegnate a mano; grafiche e magliette per la squadra delle Olimpiadi (2019–2026).' }
   ],
   en: [
-    { date: '2015 — 2017', title: 'Editorial direction and visual identity — MAJOtivù', place: 'Editorial coordination · Visual identity', desc: 'Coordinator of the MAJOtivù editorial team: during this period the project won several European grants, for some tens of thousands of euros, reinvested in upgrading equipment. Visual identity, editorial layout and branding as ongoing practice. Tools: Figma, Illustrator, InDesign, After Effects, Cinema 4D.' }
+    { date: '2015 — 2017', title: 'Editorial coordinator — MAJOtivù', place: 'Student web TV, Liceo "E. Majorana", Desio', desc: 'A team of 10–30 student volunteers: a visual identity for each format, videos, live streams, podcasts and print. Equipment purchased with EU PON funds.' },
+    { date: '2025', title: 'Coordinated communication — Exsultet! 2025', place: 'Liturgical music festival, Varese', desc: 'Extended the existing visual identity to new materials; treated the speakers\' images.' },
+    { date: 'Since 2017', title: 'Live streaming, animation and motion graphics', place: 'OBS Studio · Adobe After Effects · Adobe Animate', desc: 'Directed the live stream of the naming ceremony of the "G. Ambrosoli" Main Hall (2017); hand-drawn animation; graphics and T-shirts for the Olympiad team (2019–2026).' }
   ]
 };
 
 const leads = {
   matematica: {
-    it: 'La matematica come pratica del pensiero: dalla logica algebrica alla combinatoria, passando per i giochi olimpici e i seminari interni di Unimi.',
-    en: 'Mathematics as a practice of thought: from algebraic logic to combinatorics, through olympiad problems and the internal seminars at Unimi.'
+    it: 'La matematica come pratica del pensiero: logica, informatica teorica e ottimizzazione, con due progetti internazionali e le gare olimpiche alle spalle.',
+    en: 'Mathematics as a practice of thought: logic, theoretical computer science and optimization, with two international projects and olympiad competitions behind it.'
+  },
+  didattica: {
+    it: 'Insegnare la matematica come un metodo: esplorare, congetturare, dimostrare, scrivere con rigore.',
+    en: 'Teaching mathematics as a method: explore, conjecture, prove, write with rigor.'
   },
   teologia: {
     it: 'Un percorso parallelo, dentro la teologia sistematica e la liturgia. Stesso rigore, oggetto diverso.',
     en: 'A parallel path, within systematic theology and liturgy. The same rigor, a different object.'
   },
-  pastorale: {
-    it: 'Comunità, gruppi, accompagnamento. Il pensiero teologico passa attraverso le persone, sempre.',
-    en: 'Communities, groups, accompaniment. Theological thought always passes through people.'
+  rappresentanza: {
+    it: 'Incarichi elettivi e di nomina che crescono di livello, dalla scuola alla delegazione nazionale. Il tratto comune: far lavorare insieme gruppi eterogenei e arrivare a decisioni condivise.',
+    en: 'Elected and appointed roles growing in scope, from school to a national delegation. The common thread: getting heterogeneous groups to work together and reach shared decisions.'
   },
   grafica: {
-    it: 'Il segno come forma di pensiero. Tipografia, composizione, identità.',
-    en: 'The mark as a form of thought. Typography, composition, identity.'
+    it: 'Il segno come forma di pensiero. Identità visive, video, dirette.',
+    en: 'The mark as a form of thought. Visual identities, video, live streams.'
   }
 };
 
 const sidebarLinks = [
   { id: 'intro', key: 'intro' },
   { id: 'matematica', key: 'formazioneMat' },
+  { id: 'didattica', key: 'didattica' },
   { id: 'teologia', key: 'formazioneTeo' },
-  { id: 'pastorali', key: 'esperienzePast' },
+  { id: 'rappresentanza', key: 'rappresentanza' },
   { id: 'grafica', key: 'graficaDesign' }
 ];
 
@@ -107,11 +135,29 @@ function Entry({ entry }) {
   );
 }
 
+function Section({ id, title, lead, entries, detailHref, detailLabel, styles: s }) {
+  return (
+    <section id={id} className={s.section}>
+      <h2 className={s.sectionTitle}>{title}</h2>
+      <p className={s.sectionLead}>{lead}</p>
+      <StaggeredList className={s.list}>
+        {entries.map((e, i) => (
+          <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
+        ))}
+      </StaggeredList>
+      {detailHref && (
+        <Link href={detailHref} className={s.detailCta}>{detailLabel}</Link>
+      )}
+    </section>
+  );
+}
+
 export default async function ChiSonoPage({ params: { locale } }) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
   const prefix = `/${locale}`;
   const L = (obj) => obj[locale] || obj.it;
+  const detail = (key) => `${t(`ambiti.${key}`)} — ${t('ambiti.detailLink')}`;
 
   return (
     <div className={styles.shell}>
@@ -134,57 +180,30 @@ export default async function ChiSonoPage({ params: { locale } }) {
           </div>
         </section>
 
-        <section id="matematica" className={styles.section}>
-          <h2 className={styles.sectionTitle}>{t('chiSono.formazioneMat')}</h2>
-          <p className={styles.sectionLead}>{L(leads.matematica)}</p>
-          <StaggeredList className={styles.list}>
-            {L(formazioneMat).map((e, i) => (
-              <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
-            ))}
-          </StaggeredList>
-          <Link href={`${prefix}/chi-sono/matematica`} className={styles.detailCta}>
-            {t('ambiti.matematica')} — {t('ambiti.detailLink')}
-          </Link>
-        </section>
-
-        <section id="teologia" className={styles.section}>
-          <h2 className={styles.sectionTitle}>{t('chiSono.formazioneTeo')}</h2>
-          <p className={styles.sectionLead}>{L(leads.teologia)}</p>
-          <StaggeredList className={styles.list}>
-            {L(formazioneTeo).map((e, i) => (
-              <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
-            ))}
-          </StaggeredList>
-          <Link href={`${prefix}/chi-sono/teologia`} className={styles.detailCta}>
-            {t('ambiti.teologia')} — {t('ambiti.detailLink')}
-          </Link>
-        </section>
-
-        <section id="pastorali" className={styles.section}>
-          <h2 className={styles.sectionTitle}>{t('chiSono.esperienzePast')}</h2>
-          <p className={styles.sectionLead}>{L(leads.pastorale)}</p>
-          <StaggeredList className={styles.list}>
-            {L(esperienzePastorali).map((e, i) => (
-              <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
-            ))}
-          </StaggeredList>
-          <Link href={`${prefix}/chi-sono/pastorale`} className={styles.detailCta}>
-            {t('ambiti.pastorale')} — {t('ambiti.detailLink')}
-          </Link>
-        </section>
-
-        <section id="grafica" className={styles.section}>
-          <h2 className={styles.sectionTitle}>{t('chiSono.graficaDesign')}</h2>
-          <p className={styles.sectionLead}>{L(leads.grafica)}</p>
-          <StaggeredList className={styles.list}>
-            {L(graficaDesign).map((e, i) => (
-              <StaggeredItem key={i}><Entry entry={e} /></StaggeredItem>
-            ))}
-          </StaggeredList>
-          <Link href={`${prefix}/chi-sono/grafica`} className={styles.detailCta}>
-            {t('ambiti.grafica')} — {t('ambiti.detailLink')}
-          </Link>
-        </section>
+        <Section
+          id="matematica" styles={styles}
+          title={t('chiSono.formazioneMat')} lead={L(leads.matematica)} entries={L(formazioneMat)}
+          detailHref={`${prefix}/chi-sono/matematica`} detailLabel={detail('matematica')}
+        />
+        <Section
+          id="didattica" styles={styles}
+          title={t('chiSono.didattica')} lead={L(leads.didattica)} entries={L(didattica)}
+        />
+        <Section
+          id="teologia" styles={styles}
+          title={t('chiSono.formazioneTeo')} lead={L(leads.teologia)} entries={L(formazioneTeo)}
+          detailHref={`${prefix}/chi-sono/teologia`} detailLabel={detail('teologia')}
+        />
+        <Section
+          id="rappresentanza" styles={styles}
+          title={t('chiSono.rappresentanza')} lead={L(leads.rappresentanza)} entries={L(rappresentanza)}
+          detailHref={`${prefix}/chi-sono/rappresentanza`} detailLabel={detail('rappresentanza')}
+        />
+        <Section
+          id="grafica" styles={styles}
+          title={t('chiSono.graficaDesign')} lead={L(leads.grafica)} entries={L(graficaDesign)}
+          detailHref={`${prefix}/chi-sono/grafica`} detailLabel={detail('grafica')}
+        />
       </main>
     </div>
   );

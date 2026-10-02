@@ -255,6 +255,14 @@
   gap: 0.5rem;
 }
 
+.skillUse {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: -0.4rem 0 0.75rem;
+}
+
 /* Dual Resume — Formazione | Esperienza */
 .resumeDual {
   display: grid;

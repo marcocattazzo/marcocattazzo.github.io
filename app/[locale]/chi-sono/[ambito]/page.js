@@ -2,14 +2,15 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import AmbitoAreas from '../../../../components/AmbitoAreas';
-import { ambiti, ambitoSlugs } from '../../../../lib/ambiti';
+import { ambiti, getAmbitoSlugs } from '../../../../lib/ambiti';
 import { locales } from '../../../../i18n';
 import styles from './ambito.module.css';
 
 export function generateStaticParams() {
   const out = [];
+  const slugs = getAmbitoSlugs();
   for (const locale of locales) {
-    for (const ambito of ambitoSlugs) {
+    for (const ambito of slugs) {
       out.push({ locale, ambito });
     }
   }
@@ -17,19 +18,21 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { locale, ambito } }) {
-  if (!ambitoSlugs.includes(ambito)) return {};
+  const slugs = getAmbitoSlugs();
+  if (!slugs.includes(ambito)) return {};
   const t = await getTranslations({ locale });
   return { title: `${t(`ambiti.${ambito}`)} — Fil d'Or` };
 }
 
-const navOrder = ['matematica', 'teologia', 'pastorale', 'grafica'];
+const navOrder = ['matematica', 'teologia', 'rappresentanza', 'grafica'];
 
 export default async function AmbitoPage({ params: { locale, ambito } }) {
-  if (!ambitoSlugs.includes(ambito)) notFound();
+  const slugs = getAmbitoSlugs();
+  if (!slugs.includes(ambito)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
   const prefix = `/${locale}`;
-  const areas = ambiti[ambito];
+  const areas = (ambiti[locale] || ambiti.it)[ambito];
 
   const idx = navOrder.indexOf(ambito);
   const prev = idx > 0 ? navOrder[idx - 1] : null;
@@ -40,11 +43,11 @@ export default async function AmbitoPage({ params: { locale, ambito } }) {
       <Link href={`${prefix}/chi-sono`} className={styles.back}>{t('ambiti.backToChiSono')}</Link>
 
       <header className={styles.hero}>
-        <span className={styles.eyebrow}>Chi sono — dettaglio</span>
+        <span className={styles.eyebrow}>{t('ambiti.eyebrow')}</span>
         <h1 className={styles.title}>{t(`ambiti.${ambito}`)}</h1>
         <p className={styles.intro}>{t(`ambiti.intro.${ambito}`)}</p>
         <p className={styles.note}>
-          Pagina predisposta per accogliere l'elenco completo. Le voci sotto sono lo scheletro; possono essere ampliate, riarticolate o ridotte senza alterare la struttura.
+          {t('ambiti.note')}
         </p>
       </header>
 
@@ -62,3 +65,4 @@ export default async function AmbitoPage({ params: { locale, ambito } }) {
     </div>
   );
 }
+
